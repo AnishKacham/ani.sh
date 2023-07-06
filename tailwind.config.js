@@ -58,7 +58,7 @@ module.exports = {
       },
       animation: {
         marquee: "marquee 4s linear infinite",
-        equalizer: "equalizer 1s linear infinite",
+        equalizer: "equalizer 1.5s linear infinite",
       },
       keyframes: {
         marquee: {

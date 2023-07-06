@@ -6,13 +6,15 @@ interface INavBarProps {
 
 import { useTheme } from "next-themes";
 import Link from "next/link"
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar({navItems}:{navItems: INavBarProps[]}){
 
     const [mounted,setMounted] = useState<boolean>(false);
     const {systemTheme, setTheme, resolvedTheme} = useTheme();
-
+    const route = usePathname();
+    console.log('current route ---->\n',route);
     const toggleTheme = ()=>{
         setTheme(resolvedTheme === "dark" ? "light" : "dark")
 
@@ -21,14 +23,14 @@ export default function Navbar({navItems}:{navItems: INavBarProps[]}){
     useEffect(()=> setMounted(true))
 
     return (
-        <div className="flex w-full items-center m-2 justify-between">
-        <Link href={"/"}>
-            <img className="w-10 h-10 p-1 rounded-full ring-1 ring-slate-600 dark:ring-gray-400 " src="/profile-pic.jpg"/>
-        </Link>
-        <div className="hidden sm:flex flex gap-4 rounded-full text-slate-600 dark:text-gray-400 px-8 py-3 bg-slate-200 dark:bg-gray-900 border border-slate-600 dark:border-gray-100 text-sm font-medium">
+        <div className="sticky top-2 flex w-full items-center m-2 justify-between ">
+        {route!=='\/'?<Link href={"/"}>
+            <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-400 dark:ring-gray-400 " src="/profile-pic.jpg"/>
+        </Link>:<div></div>}
+        <div className="hidden sm:flex flex gap-4 border-gray-400 rounded-lg text-slate-600 dark:text-gray-400 px-8 py-3 bg-slate-200 border-gray-300 dark:bg-gray-900 border-2 dark:border-gray-400 text-sm font-medium shadow-lg shadow-gray-800/30 dark:shadow-slate-200/30">
         {
             navItems.map((item)=>{
-                return <Link href={`\/`+`${item.key}`} key={item.key} className="flex hover:text-red-400 align-center">
+                return <Link href={`\/`+`${item.key}`} key={item.key} className={route === '\/'+item.key ? 'flex text-red-400 align-center':'flex hover:text-red-400 align-center'}>
                     {item.label}
                 </Link>
             })

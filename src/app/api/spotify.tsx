@@ -36,7 +36,7 @@ const getAccessToken = async (): Promise<IGetAccessToken> => {
     // Hence setting a revalidate to 1 hour because a generated accessToken expires in an hour
     // as mentioned here: https://developer.spotify.com/documentation/web-api/concepts/access-token
     next: {
-      revalidate: 3600,
+      revalidate: 0,
     },
     method: "POST",
     headers: {
@@ -63,11 +63,31 @@ export async function getNowPlaying() {
         Authorization: `Bearer ${access_token}`,
       },
     });
-    if(response.status === 204 || response.status > 400){
-        return {is_playing: false, isIdle: true, item:{name:"He ain't playing no tracks ://"}}
+    if (response.status === 204 || response.status > 400) {
+        const profileData = await fetchProfile(access_token);
+        console.log(profileData);
+      return {
+        is_playing: false,
+        isIdle: true,
+        item: {
+          name: "No track being played ://",
+          album: {
+            images: [{ url: profileData.images[0].url }],
+            artists: [],
+          },
+        },
+      };
     }
     return response.json();
   } catch (error) {
     // console.log("FAILED TO FETCH CURRENTLY PLAYING SONG, ERROR: ", error);
   }
+}
+
+async function fetchProfile(token: string): Promise<any> {
+    const result = await fetch("https://api.spotify.com/v1/me", {
+        method: "GET", headers: { Authorization: `Bearer ${token}` }
+    });
+
+    return await result.json();
 }
