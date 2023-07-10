@@ -23,7 +23,7 @@ export default function Navbar({navItems}:{navItems: INavBarProps[]}){
     useEffect(()=> setMounted(true))
 
     return (
-        <div className="sticky top-2 flex w-full items-center m-2 justify-between ">
+        <div className="sticky top-2 flex w-full items-center m-2 justify-between border">
         {route!=='\/'?<Link href={"/"}>
             <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-400 dark:ring-gray-400 " src="/profile-pic.jpg"/>
         </Link>:<div></div>}

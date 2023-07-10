@@ -1,19 +1,11 @@
-import Image from "next/image";
+import ProfilePicture from "./components/profile-picture"
 
 export default async function Home() {
 
   return (
     <main className=" flex w-full h-fit flex-row items-center justify-start">
       <div className="flex flex-col justify-start mt-16">
-      <div className="sticky top-2 h-full">
-        <Image
-          width={64}
-          height={64}
-          src="/profile-pic-cropped.jpg"
-          alt="landing-page-image"
-          className="rounded-full"
-        />
-      </div>
+      <ProfilePicture/>
       <div className="flex flex-col w-fit h-full mt-10">
         <div className="w-fit h-fit text-5xl font-sans font-extrabold dark:text-slate-400 text-slate-600">
           <text>Hi, I am </text>
