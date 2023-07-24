@@ -15,7 +15,7 @@ export default function RootLayout({
       <body
         className={
           `${inter.className}` +
-          " max-w-[940px] w-full self-center flex h-fit flex-col items-center justify-between p-2 bg-slate-50 dark:bg-gray-950"
+          " max-w-[960px] w-full self-center flex h-fit flex-col items-center justify-between px-2 bg-slate-50 dark:bg-gray-950"
         }
       >
         <Providers>
@@ -29,14 +29,6 @@ export default function RootLayout({
                 key: "projects",
                 label: "Projects",
               },
-              // {
-              //   key: "articles",
-              //   label: "Articles",
-              // },
-              // {
-              //   key: "speaking",
-              //   label: "Speaking",
-              // },
             ]}
           />
           {children}
