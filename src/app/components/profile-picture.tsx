@@ -1,43 +1,56 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import proPic from "@/app/images/profile-pic-cropped.jpg";
 
 function clamp(number: number, a: number, b: number) {
-    let min = Math.min(a, b)
-    let max = Math.max(a, b)
-    return Math.min(Math.max(number, min), max)
+  let min = Math.min(a, b);
+  let max = Math.max(a, b);
+  return Math.min(Math.max(number, min), max);
 }
 
-export default function ProfilePicture(){
-    const proPicRef = useRef<HTMLImageElement>(null);
-    useEffect(()=>{
-        const adjustProfilePicture = ()=>{
-            let distanceFromTop = proPicRef.current?.getBoundingClientRect().top ?? 147;
-            // ranges from 17 - 147
-            console.log(distanceFromTop);
-            let fromX = 0;
-            let toX = 2/16
-            let fromScale = 1;
-            let toScale = 0.5;
-            let scale = (distanceFromTop - 17 / 140 ) * (0.5) // should range from fromScale to toScale linearly between 17 and 147
-            let x = 
-            proPicRef.current?.style.setProperty('transform',`scale(${clamp(scale,0,0.125)})`)
-        }
+export default function ProfilePicture() {
+  const proPicRef = useRef<HTMLImageElement>(null);
 
-        window.addEventListener('scroll',adjustProfilePicture);
+  useEffect(() => {
+    const updateStyles = () => {
+      let downDelay = proPicRef.current?.offsetTop ?? 0;
+      let fromScale = 1;
+      let toScale = 36 / 64;
+      let fromX = 0;
+      let toX = 2 / 16;
+      let scrollY = downDelay - window.scrollY;
+      let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale;
+      scale = clamp(scale, fromScale, toScale);
+      let x = (scrollY * (fromX - toX)) / downDelay + toX;
+      x = clamp(x, fromX, toX);
 
-        return ()=>{
-            window.removeEventListener('scroll',adjustProfilePicture);
-        }
-    })
-    return <div className="sticky top-2 p-2 h-fit border">
-    <Image
-      width={64}
-      height={64}
+      console.log(x, scale);
+
+      proPicRef.current?.style.setProperty(
+        "--profile-image-transform",
+        ` scale(${scale})`
+      );
+    };
+    updateStyles();
+    window.addEventListener("scroll", updateStyles);
+    return () => {
+      window.removeEventListener("scroll", updateStyles);
+    };
+  }, []);
+
+  return (
+    <div
+      className="sticky top-2.5 mt-20"
       ref={proPicRef}
-      src="/profile-pic-cropped.jpg"
-      alt="landing-page-image"
-      className="rounded-full border h-16 w-16"
-    />
-  </div>
+    >
+      <Image
+        priority
+        src={proPic}
+        alt="landing-page-image"
+        className="rounded-full h-16 w-16 p-1 ring-2 ring-gray-400 dark:ring-gray-400"
+        style={{ transform: "var(--profile-image-transform)" }}
+      />
+    </div>
+  );
 }

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getNowPlaying } from "../api/spotify";
+import SpotifyLogo from "@/app/images/spotify-logo.png";
 
 export default async function spotifyCard() {
   const currentSong = await getNowPlaying();
-  // console.log("------------>SPOTIFY DATA\n", currentSong);
 
   function renderEqualizerBars(count: number, active: boolean) {
     const bars: React.ReactNode[] = [];
@@ -18,7 +18,7 @@ export default async function spotifyCard() {
           className={`bg-[#1DB954]  rounded-full ${
             active ? `animate-equalizer w-1 h-8` : `animate-none w-1 h-1`
           }`}
-        ></div>
+        ></div>,
       );
     }
     return bars;
@@ -29,7 +29,7 @@ export default async function spotifyCard() {
       <div className="flex flex-row h-fit w-full gap-4 pt-4 pb-2 px-4">
         <div className="relative h-fit w-fit">
           <Image
-            src="/spotify-logo.png"
+            src={SpotifyLogo}
             alt="spotify-logo"
             height={28}
             width={128}

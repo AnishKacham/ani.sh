@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.1",
+    "@mui/material": "^5.14.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
@@ -29,5 +33,8 @@
   },
   "main": "layout.tsx",
   "author": "AnishKacham <f20190091@hyderabad.bits-pilani.ac.in>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "3.0.0"
+  }
 }
