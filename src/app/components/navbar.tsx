@@ -38,7 +38,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
       ) : (
         <div></div>
       )}
-      <div className="hidden sm:flex flex gap-4 border-gray-400 rounded-lg text-slate-600 dark:text-gray-400 px-8 py-3 bg-slate-200 border-gray-300 dark:bg-gray-900 border-2 dark:border-gray-400 text-sm font-medium shadow-lg shadow-gray-800/30 dark:shadow-slate-200/30">
+      <div className="hidden sm:flex flex gap-4 border-gray-400 rounded-lg text-slate-600 dark:text-gray-400 px-8 py-3 bg-slate-200 border-gray-300 dark:border-gray-400 dark:bg-gray-900 border-2 text-sm font-medium shadow-lg shadow-gray-800/30 dark:shadow-slate-200/30">
         {navItems.map((item) => {
           return (
             <Link

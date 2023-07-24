@@ -1,34 +1,39 @@
 "use client";
 
-type IIconLinkProps =  PropsWithChildren< {
-  Icon: React.ElementType,
-  href: string;
-  inverted?: boolean;
-  iconProps?: SvgIconProps;
-  props?: LinkProps
-}>
+type IIconLinkProps = PropsWithChildren<
+  {
+    Icon: React.ElementType;
+    inverted?: boolean;
+    iconProps?: SvgIconProps;
+  } & React.AnchorHTMLAttributes<HTMLAnchorElement>
+>;
 
-import Link, { LinkProps } from "next/link";
 import { SvgIconProps } from "@mui/material";
 import { PropsWithChildren } from "react";
-
 
 function IconLink({
   Icon,
   href,
   inverted = false,
-  iconProps,
+  iconProps = {},
   children,
   ...props
 }: IIconLinkProps) {
-  return <div>
-    <Link href={href} {...props}>{Icon && <Icon fontSize="medium" {...iconProps} className={inverted
-      ? `rounded-sm bg-red-400  dark:text-gray-950 text-slate-50`
-      : `rounded-sm text-slate-600 dark:text-slate-400`}
-    />}
-    {children}
-    </Link>
-  </div>;
-};
+  const defaultIconProps = {
+    className: inverted
+      ? `bg-red-500 dark:bg-red-400 text-slate-50 dark:text-slate-950`
+      : `dark:text-slate-400 text-slate-600`,
+  };
+  return (
+    <div>
+      <a {...props}>
+        {Icon && (
+          <Icon fontSize="medium" {...{ ...defaultIconProps, ...iconProps }} />
+        )}
+        {children}
+      </a>
+    </div>
+  );
+}
 
 export default IconLink;
