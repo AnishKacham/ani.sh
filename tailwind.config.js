@@ -55,6 +55,7 @@ module.exports = {
           900: "#312e81",
           950: "#1e1b4b",
         },
+        dark: '#22272e',
       },
       animation: {
         marquee: "marquee 4s linear infinite",

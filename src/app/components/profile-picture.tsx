@@ -16,7 +16,7 @@ export default function ProfilePicture() {
     const updateStyles = () => {
       let downDelay = proPicRef.current?.offsetTop ?? 0;
       let fromScale = 1;
-      let toScale = 36 / 64;
+      let toScale = 36 / 80;
       let fromX = 0;
       let toX = 2 / 16;
       let scrollY = downDelay - window.scrollY;
@@ -40,15 +40,12 @@ export default function ProfilePicture() {
   }, []);
 
   return (
-    <div
-      className="sticky top-2.5 mt-20"
-      ref={proPicRef}
-    >
+    <div className="sticky top-0 mt-20" ref={proPicRef}>
       <Image
         priority
         src={proPic}
         alt="landing-page-image"
-        className="rounded-full h-16 w-16 p-1 ring-2 ring-gray-400 dark:ring-gray-400"
+        className="rounded-full h-20 w-20 ring-2 p-1 ring-gray-400 dark:ring-gray-400"
         style={{ transform: "var(--profile-image-transform)" }}
       />
     </div>

@@ -1,18 +1,18 @@
 "use client";
-interface INavBarProps {
+export interface INavBarProps {
   label: string;
   key: string;
 }
 
-
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Link from "next/link";
 import Image from "next/image";
 import proPic from "@/app/images/profile-pic.jpg";
+import clsx from "clsx";
 
 export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
   const [mounted, setMounted] = useState<boolean>(false);
@@ -26,7 +26,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
   useEffect(() => setMounted(true));
 
   return (
-    <div className="sticky top-0 flex w-full items-center px-10 py-4 justify-between drop-shadow-">
+    <div className="sticky top-0 flex w-full items-center px-10 py-4 h-[82px] justify-between supports-backdrop-blur:bg-white/95 backdrop-blur">
       {route !== "/" ? (
         <Link href={"/"}>
           <Image
@@ -38,17 +38,18 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
       ) : (
         <div></div>
       )}
-      <div className="hidden sm:flex flex gap-4 border-gray-400 rounded-lg text-slate-600 dark:text-gray-400 px-8 py-3 bg-slate-200 border-gray-300 dark:border-gray-400 dark:bg-gray-900 border-2 text-sm font-medium shadow-lg shadow-gray-800/30 dark:shadow-slate-200/30">
+      <div className="hidden sm:flex flex gap-4 rounded-lg px-8 py-3 font-medium text-gray-900 dark:text-gray-100">
         {navItems.map((item) => {
           return (
             <Link
               href={`\/` + `${item.key}`}
               key={item.key}
-              className={
+              className={clsx(
+                "flex align-center px-2 py-1 rounded",
                 route === "/" + item.key
-                  ? "flex text-red-400 align-center"
-                  : "flex hover:text-red-400 align-center"
-              }
+                  ? "text-red-400 bg-gray-200 dark:bg-gray-700"
+                  : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+              )}
             >
               {item.label}
             </Link>
@@ -62,9 +63,9 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
           className="p-1 dark:bg-slate-50 bg-slate-600 flex items-center justify-center w-8 h-8 rounded-full border border-slate-600 dark:border-gray-100"
         >
           {mounted && resolvedTheme === "dark" ? (
-            <LightModeIcon className="w-6 h-6 dark:text-slate-600 text-slate-300"/>
-            ) : (
-            <DarkModeIcon className="w-6 h-6 dark:text-slate-600 text-slate-200"/>
+            <LightModeIcon className="w-6 h-6 dark:text-slate-600 text-slate-300" />
+          ) : (
+            <DarkModeIcon className="w-6 h-6 dark:text-slate-600 text-slate-200" />
           )}
         </button>
       </div>
