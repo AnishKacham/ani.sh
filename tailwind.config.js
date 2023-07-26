@@ -56,6 +56,7 @@ module.exports = {
           950: "#1e1b4b",
         },
         dark: '#22272e',
+        spotify: '#1db954'
       },
       animation: {
         marquee: "marquee 4s linear infinite",

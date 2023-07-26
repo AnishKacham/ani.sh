@@ -1,3 +1,4 @@
+// Use only on home page if wanted. Sticks to navbar on scroll
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";

@@ -35,6 +35,7 @@
   "author": "AnishKacham <f20190091@hyderabad.bits-pilani.ac.in>",
   "license": "MIT",
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "prettier": "3.0.0"
   }
 }

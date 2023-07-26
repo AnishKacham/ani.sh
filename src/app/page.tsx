@@ -1,14 +1,22 @@
-import IconLink from "./components/icon-link";
-import ProfilePicture from "./components/profile-picture";
 import ResumeButton from "./components/resume-button";
 import Socials from "./components/socials";
-import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import SpotifyCard from "./components/spotify-card";
+import Image from "next/image";
+import ProfilePicture from "@/app/images/profile-pic-cropped.jpg";
 
 export default function Home() {
   return (
     <main className=" flex w-full h-fit flex-col items-start px-10">
-      <ProfilePicture />
+      <div className="mt-20">
+        <Image
+          priority
+          src={ProfilePicture}
+          width={80}
+          height={80}
+          alt="landing-page-image"
+          className="rounded-full h-20 w-20"
+        />
+      </div>
       <div className="w-fit h-fit mt-10 text-5xl font-sans font-extrabold text-gray-900 dark:text-gray-100">
         <text>Hi, I am </text>
         <text className="dark:text-red-400 text-red-500">Anish</text>

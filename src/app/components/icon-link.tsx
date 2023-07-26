@@ -13,7 +13,6 @@ import { PropsWithChildren } from "react";
 
 function IconLink({
   Icon,
-  href,
   inverted = false,
   iconProps = {},
   children,

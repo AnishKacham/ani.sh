@@ -16,11 +16,11 @@ export default function RootLayout({
     navItems: [
       {
         key: "about",
-        label: "About",
+        label: "about",
       },
       {
         key: "projects",
-        label: "Projects",
+        label: "projects",
       },
     ],
   };

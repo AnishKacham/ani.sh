@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { getNowPlaying } from "../api/spotify";
 import SpotifyLogo from "@/app/images/spotify-logo.png";
+import Link from "next/link";
 
 export default async function spotifyCard() {
   const currentSong = await getNowPlaying();
-
+  console.log("NOW PLAYING", currentSong);
   function renderEqualizerBars(count: number, active: boolean) {
     const bars: React.ReactNode[] = [];
     for (let i = 0; i < count; i++) {
@@ -15,17 +16,20 @@ export default async function spotifyCard() {
         <div
           key={i}
           style={barStyle}
-          className={`bg-[#1DB954]  rounded-full ${
+          className={`bg-spotify  rounded-full ${
             active ? `animate-equalizer w-1 h-8` : `animate-none w-1 h-1`
           }`}
-        ></div>,
+        ></div>
       );
     }
     return bars;
   }
 
   return (
-    <button className="dark:shadow-slate-200/30 border-gray-400 shadow-gray-800/30 hover:opacity-80 shadow-lg shadow-lg h-fit min-h-40 mt-10 rounded-lg self-start w-80 max-w-full border-2 dark:border-gray-400">
+    <Link
+      href={currentSong?.item?.external_urls?.spotify ?? "/"}
+      className="dark:shadow-slate-200/30 border-gray-400 shadow-gray-800/30 hover:opacity-80 shadow-lg shadow-lg h-fit min-h-40 mt-10 rounded-lg self-start w-80 max-w-full border-2 dark:border-gray-400"
+    >
       <div className="flex flex-row h-fit w-full gap-4 pt-4 pb-2 px-4">
         <div className="relative h-fit w-fit">
           <Image
@@ -35,6 +39,7 @@ export default async function spotifyCard() {
             width={128}
             style={{
               objectFit: "contain",
+              zIndex: -1,
             }}
           />
         </div>
@@ -71,7 +76,7 @@ export default async function spotifyCard() {
         </div>
       </>
       {/*  )} */}
-    </button>
+    </Link>
   );
 }
 function fetchProfile() {
