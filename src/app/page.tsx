@@ -3,6 +3,7 @@ import Socials from "./components/socials";
 import SpotifyCard from "./components/spotify-card";
 import Image from "next/image";
 import ProfilePicture from "@/app/images/profile-pic-cropped.jpg";
+import DecorativeCard from "./components/decorative-card";
 
 export default function Home() {
   return (
@@ -32,8 +33,15 @@ export default function Home() {
       </div>
       <Socials />
       <ResumeButton />
-      {/* @ts-expect-error Async Server Component */}
-      <SpotifyCard />
+      <div className="relative right-[200px] flex flex-row gap-2">
+        <DecorativeCard />
+        {/* @ts-expect-error Async Server Component */}
+        <SpotifyCard />
+        <DecorativeCard />
+        <DecorativeCard />
+        <DecorativeCard />
+        <DecorativeCard />
+      </div>
       <div className="h-[3000px]"></div>
     </main>
   );

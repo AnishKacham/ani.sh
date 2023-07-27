@@ -75,12 +75,15 @@ export async function getNowPlaying() {
             images: [{ url: profileData.images[0].url }],
             artists: [],
           },
+          external_urls: {
+            spotify: "/",
+          },
         },
       };
     }
     return response.json();
   } catch (error) {
-    // console.log("FAILED TO FETCH CURRENTLY PLAYING SONG, ERROR: ", error);
+    console.error("FAILED TO FETCH CURRENTLY PLAYING SONG, ERROR: ", error);
   }
 }
 

@@ -2,6 +2,8 @@ import Image from "next/image";
 import { getNowPlaying } from "../api/spotify";
 import SpotifyLogo from "@/app/images/spotify-logo.png";
 import Link from "next/link";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import { WrapSvg } from "./svg-wrap";
 
 export default async function spotifyCard() {
   const currentSong = await getNowPlaying();
@@ -46,31 +48,44 @@ export default async function spotifyCard() {
       </div>
       <>
         <div className="flex flex-row h-fit w-full gap-4 m-4">
-          <Image
-            src={currentSong.item.album.images[0].url}
-            alt="Cover"
-            width={80}
-            height={80}
-            className="shadow-sm border rounded-md shadow-slate-200"
-          />
+          {currentSong?.item?.album?.images[0]?.url ? (
+            <Image
+              src={currentSong?.item?.album?.images[0]?.url}
+              alt="Cover"
+              width={80}
+              height={80}
+              className="shadow-sm rounded-md shadow-slate-200 border-gray-400 border"
+            />
+          ) : (
+            <WrapSvg
+              name="Sadface"
+              className="shadow-sm rounded-md shadow-slate-200 border-gray-400 border"
+            />
+          )}
           <div className="flex flex-col justify-between w-fit">
             <div className="flex flex-col items-start h-[40px]">
               <div className="flex flex-row justify-start w-40 gap-6 overflow-x-hidden h-5">
                 <div className="song-display text-sm whitespace-nowrap w-fit font-bold text-left @container">
                   <div className="@[8rem]:underline animate-marquee">
-                    {currentSong.item.name}
+                    {currentSong?.item?.name ?? (
+                      <div>Looks like something is broken, fix in progress</div>
+                    )}
                   </div>
                 </div>
               </div>
               <p className="text-sm dark:text-gray-400 h-5 w-40 text-left truncate">
-                {currentSong.item.album.artists
-                  .map((artist: any) => artist.name)
-                  .join(", ")}
+                {currentSong?.item?.album?.artists ? (
+                  currentSong?.item?.album?.artists
+                    .map((artist: any) => artist.name)
+                    .join(", ")
+                ) : (
+                  <ConstructionIcon className="text-gray-900 dark:text-gray-100" />
+                )}
               </p>
             </div>
 
             <div className="max-w-60 gap-1 h-8 items-center flex flex-row">
-              {renderEqualizerBars(20, currentSong.is_playing)}
+              {renderEqualizerBars(20, currentSong?.is_playing ?? false)}
             </div>
           </div>
         </div>
