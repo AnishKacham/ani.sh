@@ -4,6 +4,7 @@ import SpotifyCard from "./components/spotify-card";
 import Image from "next/image";
 import ProfilePicture from "@/app/images/profile-pic-cropped.jpg";
 import DecorativeCard from "./components/decorative-card";
+import MiniSpotify from "./components/mini-spotify";
 
 export default function Home() {
   return (
@@ -32,15 +33,10 @@ export default function Home() {
         Solving architectural problems is a thrill and
       </div>
       <Socials />
+      <div className="relative flex mt-5 flex-row gap-2">
       <ResumeButton />
-      <div className="relative right-[200px] flex flex-row gap-2">
-        <DecorativeCard />
         {/* @ts-expect-error Async Server Component */}
-        <SpotifyCard />
-        <DecorativeCard />
-        <DecorativeCard />
-        <DecorativeCard />
-        <DecorativeCard />
+        <MiniSpotify/>
       </div>
       <div className="h-[3000px]"></div>
     </main>

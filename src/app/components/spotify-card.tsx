@@ -7,7 +7,6 @@ import { WrapSvg } from "./svg-wrap";
 
 export default async function spotifyCard() {
   const currentSong = await getNowPlaying();
-  console.log("NOW PLAYING", currentSong);
   function renderEqualizerBars(count: number, active: boolean) {
     const bars: React.ReactNode[] = [];
     for (let i = 0; i < count; i++) {
