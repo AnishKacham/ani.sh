@@ -29,11 +29,10 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
     <div className="z-50 sticky top-0 flex w-full items-center py-4 px-10 h-fit justify-between supports-backdrop-blur:bg-white/95 backdrop-blur">
       <Link
         href="/"
-        className="flex flex-row items-center dark:text-gray-500 text-slate-400 font-semibold"
+        className="flex flex-row align-center px-2 py-1 rounded text-red-400 bg-gray-200 dark:bg-gray-700"
       >
-        <WrapSvg name="A" className="text-gray-900 dark:text-gray-100 mr-4" />
         anish{" "}
-        <div className="rounded-full w-1 h-1 dark:bg-gray-500 bg-slate-400 mx-2"></div>{" "}
+        <div className="rounded-full w-1 h-1 bg-red-400 mx-2 self-center"></div>{" "}
         kacham
       </Link>
 
@@ -48,7 +47,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
                   "flex align-center px-2 py-1 rounded",
                   route === "/" + item.key
                     ? "text-red-400 bg-gray-200 dark:bg-gray-700"
-                    : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700",
+                    : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700"
                 )}
               >
                 {item.label}

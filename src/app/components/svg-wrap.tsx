@@ -7,11 +7,13 @@ type IWrapSvg = {
 import A from "@/app/assets/a.svg";
 import Codeforces from "@/app/assets/codeforces.svg";
 import Sadface from "@/app/assets/sadface.svg";
+import X from "@/app/assets/x.svg";
 
 export const IconMap = {
   A,
   Codeforces,
   Sadface,
+  X,
 };
 
 export function WrapSvg(props: IWrapSvg) {

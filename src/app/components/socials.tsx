@@ -19,13 +19,11 @@ const Socials = () => {
           Icon={GitHubIcon}
           href="https://github.com/AnishKacham"
         />
-        <IconLink
-          target="_blank"
-          Icon={TwitterIcon}
-          href="https://twitter.com/anishKach"
-        />
+        <a href="https://twitter.com/anishKach" target="_blank">
+          <WrapSvg name="X" className="w-[18px] mb-0.5" />
+        </a>
         <a href="https://codeforces.com/profile/noGoodHandles" target="_blank">
-          <WrapSvg name="Codeforces" className="h-[24px] py-[1px]" />
+          <WrapSvg name="Codeforces" className="h-[24px]" />
         </a>
       </div>
     </>
