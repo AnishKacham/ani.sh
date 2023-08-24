@@ -55,16 +55,21 @@ module.exports = {
           900: "#312e81",
           950: "#1e1b4b",
         },
-        dark: '#22272e',
-        spotify: '#1db954'
+        dark: "#22272e",
+        spotify: "#1db954",
       },
       animation: {
         marquee: "marquee 4s linear infinite",
         equalizer: "equalizer 1.5s linear infinite",
+        "marquee-mini": "marquee-mini 4s linear infinite",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(8rem)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        "marquee-mini": {
+          "0%": { transform: "translateX(6rem)" },
           "100%": { transform: "translateX(-100%)" },
         },
         equalizer: {

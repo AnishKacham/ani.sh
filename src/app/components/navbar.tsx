@@ -26,7 +26,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
   // use 82 px height if using the sticky profile picture component in home page
   // and py-4 for the returning div
   return (
-    <div className="sticky top-0 flex w-full items-center px-10 h-fit justify-between supports-backdrop-blur:bg-white/95 backdrop-blur">
+    <div className="z-50 sticky top-0 flex w-full items-center py-4 px-10 h-fit justify-between supports-backdrop-blur:bg-white/95 backdrop-blur">
       <Link
         href="/"
         className="flex flex-row items-center dark:text-gray-500 text-slate-400 font-semibold"
@@ -38,7 +38,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
       </Link>
 
       <div className="flex flex-row items-center">
-        <div className="hidden sm:flex flex gap-4 rounded-lg px-8 py-3 font-medium text-gray-900 dark:text-gray-100">
+        <div className="hidden sm:flex flex gap-4 rounded-lg px-8 font-medium text-gray-900 dark:text-gray-100">
           {navItems.map((item) => {
             return (
               <Link
@@ -48,7 +48,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
                   "flex align-center px-2 py-1 rounded",
                   route === "/" + item.key
                     ? "text-red-400 bg-gray-200 dark:bg-gray-700"
-                    : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700",
                 )}
               >
                 {item.label}

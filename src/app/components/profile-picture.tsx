@@ -30,7 +30,7 @@ export default function ProfilePicture() {
 
       proPicRef.current?.style.setProperty(
         "--profile-image-transform",
-        ` scale(${scale})`
+        ` scale(${scale})`,
       );
     };
     updateStyles();

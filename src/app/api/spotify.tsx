@@ -14,19 +14,22 @@ interface IGetAccessToken {
   scope: string;
 }
 
-interface ITrackItem{
+interface ITrackItem {
   album: {
     images: {
-      url: string,
-      width: number,
-      height: number,
-    }[],
-  },
+      url: string;
+      width: number;
+      height: number;
+    }[];
+    external_urls: {
+      spotify: string;
+    };
+  };
   artists: {
-    name: string,
-  }[],
-  name: string,
-  uri: string,
+    name: string;
+  }[];
+  name: string;
+  uri: string;
 }
 
 const getAccessToken = async (): Promise<IGetAccessToken> => {
@@ -86,27 +89,26 @@ export async function getNowPlaying() {
   }
 }
 
-export async function fetchRecentlyPlayedTrack(){
-  try{
+export async function fetchRecentlyPlayedTrack() {
+  try {
     const { access_token } = await getAccessToken();
 
-    const response = await fetch(RECENTLY_PLAYED_ENDPOINT + '?limit=1',{
+    const response = await fetch(RECENTLY_PLAYED_ENDPOINT + "?limit=1", {
       method: "GET",
-      headers: {Authorization: `Bearer ${access_token}`}
+      headers: { Authorization: `Bearer ${access_token}` },
     });
     const res = await response.json();
     return res.items;
-  } catch (error){
-    console.error('FAILED TO FETCH RECENTLY PLAYED TRACKS, ERROR: ',error);
+  } catch (error) {
+    console.error("FAILED TO FETCH RECENTLY PLAYED TRACKS, ERROR: ", error);
   }
-  
 }
 
 export async function fetchLatestPlayed(): Promise<ITrackItem> {
-  try{
+  try {
     const { access_token } = await getAccessToken();
-    
-    const currentlyPlaying = await fetch(NOW_PLAYING_ENDPOINT,{
+
+    const currentlyPlaying = await fetch(NOW_PLAYING_ENDPOINT, {
       next: {
         revalidate: 0,
       },
@@ -115,28 +117,34 @@ export async function fetchLatestPlayed(): Promise<ITrackItem> {
       },
     });
 
-    if(currentlyPlaying.status === 204 || currentlyPlaying.status > 400){
-      const recentlyPlayedTrack = await fetch(RECENTLY_PLAYED_ENDPOINT+'?limit=1',{
-        next: {
-          revalidate: 0,
+    if (currentlyPlaying.status === 204 || currentlyPlaying.status > 400) {
+      const recentlyPlayedTrack = await fetch(
+        RECENTLY_PLAYED_ENDPOINT + "?limit=1",
+        {
+          next: {
+            revalidate: 0,
+          },
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
         },
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      });
+      );
 
       const recentlyPlayedTrackItem = await recentlyPlayedTrack.json();
       return recentlyPlayedTrackItem.items[0].track;
-    }
-    else{
+    } else {
       const currentlyPlayingTrackItem = await currentlyPlaying.json();
       return currentlyPlayingTrackItem.item;
     }
-  } catch (error){
-    console.error('FAILED TO FETCH THE LATEST PLAYED / CURRENTLY PLAYING TRACK, ERROR: ',error);
-    throw new Error("FAILED TO FETCH LATEST PLAYED SONG / CURRENTLY PLAYING SONG");
+  } catch (error) {
+    console.error(
+      "FAILED TO FETCH THE LATEST PLAYED / CURRENTLY PLAYING TRACK, ERROR: ",
+      error,
+    );
+    throw new Error(
+      "FAILED TO FETCH LATEST PLAYED SONG / CURRENTLY PLAYING SONG",
+    );
   }
-  
 }
 
 async function fetchProfile(token: string): Promise<any> {
