@@ -2,7 +2,7 @@
 import IconLink from "./icon-link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { WrapSvg } from "./svg-wrap";
 
 const Socials = () => {
@@ -25,6 +25,11 @@ const Socials = () => {
         <a href="https://codeforces.com/profile/noGoodHandles" target="_blank">
           <WrapSvg name="Codeforces" className="h-[24px]" />
         </a>
+        <IconLink
+          target="_blank"
+          Icon={InstagramIcon}
+          href="https://www.instagram.com/_.o0anish0o._/"
+        />
       </div>
     </>
   );

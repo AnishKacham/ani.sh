@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getNowPlaying } from "../api/spotify";
+import { getNowPlaying } from "../(api)/spotify";
 import SpotifyLogo from "@/app/images/spotify-logo.png";
 import Link from "next/link";
 import ConstructionIcon from "@mui/icons-material/Construction";

@@ -1,5 +1,5 @@
-import DuolingoCard from "../components/duolingo-card";
-import SpotifyCard from "../components/spotify-card";
+import DuolingoCard from "../(components)/duolingo-card";
+import SpotifyCard from "../(components)/spotify-card";
 
 export default function About() {
   return (

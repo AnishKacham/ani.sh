@@ -1,5 +1,5 @@
 import Image from "next/image";
-import getDuolingoData from "../api/duolingo";
+import getDuolingoData from "../(api)/duolingo";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import BoltIcon from "@mui/icons-material/Bolt";
 

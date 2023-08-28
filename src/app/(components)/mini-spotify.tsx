@@ -1,6 +1,6 @@
-import { fetchLatestPlayed } from "../api/spotify";
+import { fetchLatestPlayed } from "../(api)/spotify";
 import Image from "next/image";
-import Spotify from "@/app/assets/spotify.png";
+import Spotify from "@/app/(assets)/spotify.png";
 import clsx from "clsx";
 
 function renderEqualizer(count: number = 20, active: boolean = true) {

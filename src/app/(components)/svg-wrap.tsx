@@ -4,10 +4,10 @@ type IWrapSvg = {
   name: keyof typeof IconMap;
 } & React.SVGAttributes<SVGAElement>;
 
-import A from "@/app/assets/a.svg";
-import Codeforces from "@/app/assets/codeforces.svg";
-import Sadface from "@/app/assets/sadface.svg";
-import X from "@/app/assets/x.svg";
+import A from "@/app/(assets)/a.svg";
+import Codeforces from "@/app/(assets)/codeforces.svg";
+import Sadface from "@/app/(assets)/sadface.svg";
+import X from "@/app/(assets)/x.svg";
 
 export const IconMap = {
   A,

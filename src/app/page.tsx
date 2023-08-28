@@ -1,10 +1,10 @@
-import ResumeButton from "./components/resume-button";
-import Socials from "./components/socials";
-import SpotifyCard from "./components/spotify-card";
+import ResumeButton from "./(components)/resume-button";
+import Socials from "./(components)/socials";
+import SpotifyCard from "./(components)/spotify-card";
 import Image from "next/image";
 import ProfilePicture from "@/app/images/profile-pic-cropped.jpg";
 import { Suspense } from "react";
-import MiniSpotify from "./components/mini-spotify";
+import MiniSpotify from "./(components)/mini-spotify";
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
           fallback={
             <button className="flex flex-row items-center w-36 rounded-md button gap-1 bg-slate-700 animate-pulse">
               <div className="w-[60px] h-[40px] rounded-l-md bg-slate-600"></div>
-              <div className="w-full flex flex-col gap-1.5 pr-1">
+              <div className="w-full flex flex-col gap-1.5 pr-1.5">
                 <div className="bg-slate-600 w-full h-2.5"></div>
                 <div className="bg-slate-600 w-full h-2.5"></div>
               </div>
@@ -50,7 +50,7 @@ export default function Home() {
           <MiniSpotify />
         </Suspense>
       </div>
-      <div className="h-[3000px]"></div>
+      {/* <div className="h-[3000px]"></div> */}
     </main>
   );
 }
