@@ -38,10 +38,10 @@ export default function Home() {
         <Suspense
           fallback={
             <button className="flex flex-row items-center w-36 rounded-md button gap-1 bg-slate-700 animate-pulse">
-              <div className="w-[60px] h-[40px] rounded-l-md bg-slate-600"></div>
+              <div className="w-[60px] h-[40px] rounded-l-sm bg-slate-600"></div>
               <div className="w-full flex flex-col gap-1.5 pr-1.5">
-                <div className="bg-slate-600 w-full h-2.5"></div>
-                <div className="bg-slate-600 w-full h-2.5"></div>
+                <div className="bg-slate-600 w-full h-2.5 rounded-sm"></div>
+                <div className="bg-slate-600 w-full h-2.5 rounded-sm"></div>
               </div>
             </button>
           }

@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
+import { PromiseSleep } from "./utils";
 
 interface IPost{
   content: string,
@@ -15,6 +16,7 @@ interface IPost{
 
 // TODO: Add caching to prevent unnecessary network waterfall
 export async function getPosts() : Promise<IPost[]> {
+  // await PromiseSleep(5000);
   const blogPosts = await fs.readdir("src/app/(blogposts)/");
 
   return Promise.all(
@@ -38,11 +40,8 @@ export async function getPosts() : Promise<IPost[]> {
   );
 }
 
-async function sleep(ms: number){
-  return new Promise(resolve => setTimeout(resolve,ms));
-}
-
 export async function getPost(slug: string) {
+  // await PromiseSleep(5000);
   const posts = await getPosts();
   return posts.find((post) => post.slug === slug);
 }
