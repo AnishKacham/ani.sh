@@ -8,7 +8,7 @@ import MiniSpotify from "./(components)/mini-spotify";
 
 export default function Home() {
   return (
-    <main className=" flex w-full h-fit flex-col items-start px-10">
+    <main className=" flex w-full h-[100%] flex-col items-start px-10">
       <div className="mt-20">
         <Image
           priority

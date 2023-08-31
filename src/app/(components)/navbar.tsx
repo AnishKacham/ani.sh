@@ -16,7 +16,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
   const [mounted, setMounted] = useState<boolean>(false);
   const { systemTheme, setTheme, resolvedTheme } = useTheme();
   const route = usePathname();
-  console.log("current route ---->\n", route);
+
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };

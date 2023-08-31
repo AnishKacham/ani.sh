@@ -19,17 +19,17 @@ export default function RootLayout({
         label: "about",
       },
       {
-        key: "projects",
-        label: "projects",
+        key: "blog",
+        label: "blog",
       },
     ],
   };
   return (
-    <html suppressHydrationWarning={true} className="flex flex-col">
+    <html suppressHydrationWarning={true} className="flex flex-col h-[100%]">
       <body
         className={
           `${inter.className}` +
-          " max-w-[960px] w-full self-center flex h-fit flex-col items-center justify-between px-2 bg-slate-50 dark:bg-dark"
+          " max-w-[960px] w-full self-center flex h-[100%] flex-col items-center justify-start px-2 bg-slate-50 dark:bg-dark"
         }
       >
         <Providers>

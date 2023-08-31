@@ -2,7 +2,19 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
-export async function getPosts() {
+interface IPost{
+  content: string,
+  slug: string,
+  title?: string,
+  summary?: string,
+  tags?: string[],
+  published?: boolean,
+  date?: string,
+  time?: number,
+}
+
+// TODO: Add caching to prevent unnecessary network waterfall
+export async function getPosts() : Promise<IPost[]> {
   const blogPosts = await fs.readdir("src/app/(blogposts)/");
 
   return Promise.all(
@@ -24,6 +36,10 @@ export async function getPosts() {
       return { ...data, content, slug: fileSlug };
     }),
   );
+}
+
+async function sleep(ms: number){
+  return new Promise(resolve => setTimeout(resolve,ms));
 }
 
 export async function getPost(slug: string) {

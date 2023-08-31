@@ -9,7 +9,6 @@ export default async function BlogPage({
     slug: string;
   };
 }) {
-  console.log("[SLUG] : ", params.slug);
   const post = await getPost(params.slug);
   if (!post) return notFound();
   return <PostBody>{post?.content}</PostBody>;

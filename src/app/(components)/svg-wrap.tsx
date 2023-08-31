@@ -23,6 +23,6 @@ export function WrapSvg(props: IWrapSvg) {
   const defaultStyle = {
     className: "text-gray-900 dark:text-gray-100 fill-current",
   };
-  console.log(rest);
+
   return <Icon {...{ ...defaultStyle, ...rest }} />;
 }
