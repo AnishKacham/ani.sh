@@ -1,13 +1,14 @@
-import ResumeButton from "./components/resume-button";
-import Socials from "./components/socials";
-import SpotifyCard from "./components/spotify-card";
+import ResumeButton from "./(components)/resume-button";
+import Socials from "./(components)/socials";
+import SpotifyCard from "./(components)/spotify-card";
 import Image from "next/image";
 import ProfilePicture from "@/app/images/profile-pic-cropped.jpg";
-import DecorativeCard from "./components/decorative-card";
+import { Suspense } from "react";
+import MiniSpotify from "./(components)/mini-spotify";
 
 export default function Home() {
   return (
-    <main className=" flex w-full h-fit flex-col items-start px-10">
+    <main className=" flex w-full h-[100%] flex-col items-start px-10">
       <div className="mt-20">
         <Image
           priority
@@ -32,17 +33,24 @@ export default function Home() {
         Solving architectural problems is a thrill and
       </div>
       <Socials />
-      <ResumeButton />
-      <div className="relative right-[200px] flex flex-row gap-2">
-        <DecorativeCard />
-        {/* @ts-expect-error Async Server Component */}
-        <SpotifyCard />
-        <DecorativeCard />
-        <DecorativeCard />
-        <DecorativeCard />
-        <DecorativeCard />
+      <div className="relative flex-wrap flex mt-5 flex-row gap-2">
+        <ResumeButton />
+        <Suspense
+          fallback={
+            <button className="flex flex-row items-center w-36 rounded-md button gap-1 bg-slate-700 animate-pulse">
+              <div className="w-[60px] h-[40px] rounded-l-md bg-slate-600"></div>
+              <div className="w-full flex flex-col gap-1.5 pr-1.5">
+                <div className="bg-slate-600 w-full h-2.5"></div>
+                <div className="bg-slate-600 w-full h-2.5"></div>
+              </div>
+            </button>
+          }
+        >
+          {/* @ts-expect-error Async Server Component */}
+          <MiniSpotify />
+        </Suspense>
       </div>
-      <div className="h-[3000px]"></div>
+      {/* <div className="h-[3000px]"></div> */}
     </main>
   );
 }

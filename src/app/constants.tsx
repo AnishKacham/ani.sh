@@ -9,3 +9,4 @@ export const basic = Buffer.from(`${client_id}:${client_secret}`).toString(
 );
 export const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 export const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+export const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;

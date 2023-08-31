@@ -1,0 +1,60 @@
+---
+title: "Rendering MDX with NextJS App router, dynamic segments"
+date: "28th August, 2023"
+published: "true"
+tags: ["NextJS","Blog","MDX"]
+time: 6
+summary: "A complete server side rendering of locally stored mdx files using next-remote-mdx/rsc along with syntax highlighting (also server side)"
+---
+
+# Render MDX with NextJS App router, dynamic segments
+
+- Browser does not understand MDX out of the box. So here's where we need help of a few packages that next provides us.
+- Why aren't the styles getting appended
+
+```cmd
+yarn add install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+```
+
+These packages are used to intercept the string data and convert into proper html by mdx-remote
+
+```cmd
+yarn add remark-gfm rehype-slug rehype-autolink-headings @fec/remark-a11y-emoji remark-toc
+```
+
+but these packages have no meaning without remakr and rehype hence:
+
+```cmd
+yarn add remark rehype
+```
+
+# Hello World !
+
+```js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+```hello.py
+print("Hello, world!")
+```
+
+```styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+[bright](https://www.google.com/)
+
+```
+yarn add remark rehype
+```
+
+
+[https://www.google.com/](https://www.google.com)

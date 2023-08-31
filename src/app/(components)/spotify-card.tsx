@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getNowPlaying } from "../api/spotify";
+import { getNowPlaying } from "../(api)/spotify";
 import SpotifyLogo from "@/app/images/spotify-logo.png";
 import Link from "next/link";
 import ConstructionIcon from "@mui/icons-material/Construction";
@@ -7,7 +7,6 @@ import { WrapSvg } from "./svg-wrap";
 
 export default async function spotifyCard() {
   const currentSong = await getNowPlaying();
-  console.log("NOW PLAYING", currentSong);
   function renderEqualizerBars(count: number, active: boolean) {
     const bars: React.ReactNode[] = [];
     for (let i = 0; i < count; i++) {
@@ -21,7 +20,7 @@ export default async function spotifyCard() {
           className={`bg-spotify  rounded-full ${
             active ? `animate-equalizer w-1 h-8` : `animate-none w-1 h-1`
           }`}
-        ></div>
+        ></div>,
       );
     }
     return bars;
@@ -65,8 +64,8 @@ export default async function spotifyCard() {
           <div className="flex flex-col justify-between w-fit">
             <div className="flex flex-col items-start h-[40px]">
               <div className="flex flex-row justify-start w-40 gap-6 overflow-x-hidden h-5">
-                <div className="song-display text-sm whitespace-nowrap w-fit font-bold text-left @container">
-                  <div className="@[8rem]:underline animate-marquee">
+                <div className="song-display text-sm whitespace-nowrap w-fit font-bold text-left">
+                  <div className="animate-marquee">
                     {currentSong?.item?.name ?? (
                       <div>Looks like something is broken, fix in progress</div>
                     )}
