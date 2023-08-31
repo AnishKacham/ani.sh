@@ -3,7 +3,10 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkToc from "remark-toc";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import { mdxComponents } from "./mdx-components";
+import Head from "next/head";
 
 export function PostBody({ children }: { children: string }) {
   return (
@@ -13,8 +16,8 @@ export function PostBody({ children }: { children: string }) {
         source={children}
         options={{
           mdxOptions: {
-            remarkPlugins: [remarkGfm, remarkToc],
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+            remarkPlugins: [remarkGfm, remarkToc, remarkMath],
+            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings,rehypeKatex],
           },
         }}
         components={mdxComponents}
