@@ -13,7 +13,7 @@ function blogSkeleton(){
 export default function BlogsLoading() {
     let skeletons = Array.from({length: 3},()=>{return blogSkeleton()})
     return (
-        <div className="w-full px-10 py-10 animate-pulse flex flex-col gap-2 divide-gray-700 divide-y">
+        <div className="w-full py-10 animate-pulse flex flex-col gap-8 divide-gray-700 divide-y">
             {
                 skeletons.map((Skeleton)=>(Skeleton))
             }

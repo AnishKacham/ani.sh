@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={
           `${inter.className}` +
-          " max-w-[960px] w-full self-center flex h-[100%] flex-col items-center justify-start px-2 bg-slate-50 dark:bg-slate-800"
+          " max-w-2xl w-full self-center flex h-[100%] flex-col items-center justify-start bg-slate-50 dark:bg-slate-800 px-4 sm:px-6 xl:max-w-2xl xl:px-0"
         }
       >
         <Providers>

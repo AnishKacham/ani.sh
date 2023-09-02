@@ -3,7 +3,7 @@ import SpotifyCard from "../(components)/spotify-card";
 
 export default function About() {
   return (
-    <div className="flex flex-col sm:justify-between h-[100%] sm:w-full px-10 gap-1 sm:flex-row items-center">
+    <div className="flex flex-col sm:justify-between h-[100%] sm:w-full gap-1 sm:flex-row items-center">
       {/* @ts-expect-error Async Server Component */}
       <DuolingoCard />
       {/* @ts-expect-error Async Server Component */}

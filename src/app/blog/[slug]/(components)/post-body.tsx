@@ -10,7 +10,7 @@ import Head from "next/head";
 
 export function PostBody({ children }: { children: string }) {
   return (
-    <div className="prose dark:prose-invert prose-red px-10 py-10 w-full">
+    <div className="prose prose-red dark:prose-invert">
       {/* @ts-expect-error Async Server Component */}
       <MDXRemote
         source={children}
