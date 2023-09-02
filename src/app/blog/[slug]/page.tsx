@@ -1,4 +1,4 @@
-import { PostBody } from "@/app/blog/(components)/post-body";
+import { PostBody } from "@/app/blog/[slug]/(components)/post-body";
 import { getPost } from "@/app/(api)/blog";
 import { notFound } from "next/navigation";
 

@@ -32,10 +32,10 @@ export async function getPosts() : Promise<IPost[]> {
         `src/app/(blogposts)/${blogpost}/${mdxFile}`,
       );
       const { data, content } = matter(postContent);
-      const fileSlug = path.parse(mdxFile).name;
+      // const fileSlug = path.parse(mdxFile).name;
       if (data.published === false)
-        return { ...data, content: "It's under works!", slug: fileSlug };
-      return { ...data, content, slug: fileSlug };
+        return { ...data, content: "It's under works!", slug: blogpost };
+      return { ...data, content, slug: blogpost };
     }),
   );
 }
