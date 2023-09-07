@@ -1,15 +1,16 @@
 import ResumeButton from "./(components)/resume-button";
 import Socials from "./(components)/socials";
-import SpotifyCard from "./(components)/spotify-card";
 import Image from "next/image";
 import ProfilePicture from "@/app/images/profile-pic-cropped.jpg";
 import { Suspense } from "react";
 import MiniSpotify from "./(components)/mini-spotify";
+import WorkHistory from "./(components)/work-history";
+import Projects from "./(components)/projects";
 
 export default function Home() {
   return (
     <main className=" flex w-full h-[100%] flex-col items-start">
-      <div className="mt-20">
+      <div className="mt-16">
         <Image
           priority
           src={ProfilePicture}
@@ -50,7 +51,9 @@ export default function Home() {
           <MiniSpotify />
         </Suspense>
       </div>
-      {/* <div className="h-[3000px]"></div> */}
+      {/* @ts-expect-error Async Server Component */}
+      <WorkHistory />
+      <Projects/>
     </main>
   );
 }

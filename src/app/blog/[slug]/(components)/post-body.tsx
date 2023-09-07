@@ -6,7 +6,6 @@ import remarkToc from "remark-toc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { mdxComponents } from "./mdx-components";
-import Head from "next/head";
 
 export function PostBody({ children }: { children: string }) {
   return (
