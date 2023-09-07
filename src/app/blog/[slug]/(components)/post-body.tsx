@@ -16,7 +16,7 @@ export function PostBody({ children }: { children: string }) {
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm, remarkToc, remarkMath],
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings,rehypeKatex],
+            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeKatex],
           },
         }}
         components={mdxComponents}

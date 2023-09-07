@@ -3,19 +3,19 @@ import matter from "gray-matter";
 import path from "path";
 import { PromiseSleep } from "./utils";
 
-interface IPost{
-  content: string,
-  slug: string,
-  title?: string,
-  summary?: string,
-  tags?: string[],
-  published?: boolean,
-  date?: string,
-  time?: number,
+interface IPost {
+  content: string;
+  slug: string;
+  title?: string;
+  summary?: string;
+  tags?: string[];
+  published?: boolean;
+  date?: string;
+  time?: number;
 }
 
 // TODO: Add caching to prevent unnecessary network waterfall
-export async function getPosts() : Promise<IPost[]> {
+export async function getPosts(): Promise<IPost[]> {
   // await PromiseSleep(5000);
   const blogPosts = await fs.readdir("src/app/(blogposts)/");
 
