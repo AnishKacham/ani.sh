@@ -25,7 +25,7 @@ export default function RootLayout({
     ],
   };
   return (
-    <html suppressHydrationWarning={true} className="flex flex-col h-[100%]">
+    <html suppressHydrationWarning={true} className="flex flex-col min-h-full">
       <head>
         <link
           rel="stylesheet"
@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={
           `${inter.className}` +
-          " max-w-2xl w-full self-center flex h-fit sm:h-full flex-col items-center justify-start bg-slate-50 dark:bg-slate-800 xl:max-w-2xl px-6 md:px-0 xl:px-0"
+          " max-w-[780px] w-full self-center flex h-[100%] flex-col items-center justify-start bg-slate-50 dark:bg-slate-800 px-6 md:px-0 xl:px-0"
         }
       >
         <Providers>

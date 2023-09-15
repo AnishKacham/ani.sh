@@ -1,12 +1,15 @@
+import Link from "next/link";
+
 export default function Projects() {
   return (
-    <div className="mt-10 w-full flex flex-col gap-8">
-      <div className="flex flex-row w-full">
-        <div className="text-3xl dark:text-slate-400 text-gray-900 font-extrabold">
-          Some Things I've Built
-        </div>
-        <div className="w-fit"></div>
+    <div className="mt-32 w-full flex flex-col">
+      <div className="md:grid flex flex-col grid-cols-[max-content_1fr] items-center gap-8">
+        <div className="text-3xl font-extrabold w-fit">Some things that I've built</div>
+        <div className="justify-self-stretch border-t dark:border-gray-700 border-gray-200 w-full"></div>
       </div>
+      <Link href="/archive" className="w-full text-center text-sm pt-2 pb-4 text-red-400 hover:underline">
+        view the archvie
+      </Link>
     </div>
   );
 }

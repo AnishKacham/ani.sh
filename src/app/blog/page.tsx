@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function BlogPage() {
   const posts = await getPosts();
   return (
-    <div className="flex flex-col py-10 gap-2 w-full dark:divide-gray-700 divide-slate-300 divide-y">
+    <div className="flex flex-col py-10 gap-2 w-full dark:divide-gray-700 divide-slate-300 divide-y h-full">
       <div className="text-4xl font-bold dark:text-neutral-400 text-neutral-500">
         All Posts
       </div>
