@@ -21,9 +21,9 @@ export default function () {
         }}
         Icon={WorkHistoryIcon}
       >
-        <text className="ml-2 dark:text-dark text-sm text-slate-50 font-semibold hover:underline hover:underline-offset-4">
+        <span className="ml-2 dark:text-dark text-sm text-slate-50 font-semibold hover:underline hover:underline-offset-4">
           Resume / CV
-        </text>
+        </span>
       </IconLink>
     </button>
   );

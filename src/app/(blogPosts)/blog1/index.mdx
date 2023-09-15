@@ -1,60 +1,45 @@
 ---
-title: "Rendering MDX with NextJS App router, dynamic segments"
+title: "About this project ^_^"
 date: "28th August, 2023"
 published: "true"
-tags: ["NextJS","Blog","MDX"]
+tags: ["NextJS", "Blog", "MDX"]
 time: 6
 summary: "A complete server side rendering of locally stored mdx files using next-remote-mdx/rsc along with syntax highlighting (also server side)"
 ---
 
-# Render MDX with NextJS App router, dynamic segments
+# About this project ^\_^
 
-- Browser does not understand MDX out of the box. So here's where we need help of a few packages that next provides us.
-- Why aren't the styles getting appended
+## Motivation
 
-```cmd
-yarn add install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
-```
+I always wanted to have my own website that I keep up to date with all relevant aspects of my life that I would like to share with others.
+Also I was kind of getting bored and wanted to explore newer frameworks, hence this.
 
-These packages are used to intercept the string data and convert into proper html by mdx-remote
+## Features
 
-```cmd
-yarn add remark-gfm rehype-slug rehype-autolink-headings @fec/remark-a11y-emoji remark-toc
-```
+- #### Blog
 
-but these packages have no meaning without remakr and rehype hence:
+  This wasn't in plan when I started building this but I decided to go ahead midway because I wanted to document the process.
+  So what's better than just adding a section for such kind of stuff even for any other future projects that I may build or snippets that I use
 
-```cmd
-yarn add remark rehype
-```
+- #### KaTeX math
 
-# Hello World !
+  I've also added [KaTeX](https://katex.org/docs/supported) for easily writing math equations in the blog. So you could do something like:
 
-```js
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit ? consectetur(ipsum) : [];
-}
-```
+  $$
+  L = \frac{1}{2} \rho v^2 S C_L
+  $$
 
-```hello.py
-print("Hello, world!")
-```
+  by simply doing this in your code:
 
-```styles.css
-.lorem {
-  color: #fff;
-  padding: 10px;
-  background: #000;
-}
-```
+  ```mdx
+  $$
+  L = \frac{1}{2} \rho v^2 S C_L
+  $$
+  ```
 
-[bright](https://www.google.com/)
+- #### Spotiy status
 
-```
-yarn add remark rehype
-```
+  Displays my currently playing song or the most recently played song on Spotify. This was super fun to implement. I had a lot of things in mind for this feature but given the time and my commitment to other things I couldn't explore all of them.
 
-
-[https://www.google.com/](https://www.google.com)
+- #### Light and Dark mode
+  Pretty much a standard in modern applications and websites. I didn't think this would be complete without this feature.

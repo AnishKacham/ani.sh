@@ -25,19 +25,19 @@ export default function RootLayout({
     ],
   };
   return (
-    <html suppressHydrationWarning={true} className="flex flex-col h-[100%]">
+    <html suppressHydrationWarning={true} className="flex flex-col min-h-full">
       <head>
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-                integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-                crossOrigin="anonymous"
-            />
-        </head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
+          integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={
           `${inter.className}` +
-          " max-w-2xl w-full self-center flex h-[100%] flex-col items-center justify-start bg-slate-50 dark:bg-slate-800 px-4 sm:px-6 xl:max-w-2xl xl:px-0"
+          " max-w-[780px] w-full self-center flex h-[100%] flex-col items-center justify-start bg-slate-50 dark:bg-slate-800 px-6 md:px-0 xl:px-0"
         }
       >
         <Providers>

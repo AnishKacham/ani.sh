@@ -6,7 +6,6 @@ import remarkToc from "remark-toc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { mdxComponents } from "./mdx-components";
-import Head from "next/head";
 
 export function PostBody({ children }: { children: string }) {
   return (
@@ -17,7 +16,7 @@ export function PostBody({ children }: { children: string }) {
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm, remarkToc, remarkMath],
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings,rehypeKatex],
+            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeKatex],
           },
         }}
         components={mdxComponents}

@@ -3,14 +3,14 @@ import IconLink from "./icon-link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from "@mui/icons-material/Email";
 import { WrapSvg } from "./svg-wrap";
 
 const Socials = () => {
   return (
     <>
       <div className="mt-5 flex flex-row gap-4 items-end">
-      <IconLink
+        <IconLink
           target="_blank"
           Icon={EmailIcon}
           href="mailto:anish.k.kacham@gmail.com"
