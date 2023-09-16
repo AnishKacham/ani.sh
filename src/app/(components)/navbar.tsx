@@ -29,7 +29,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
       <div className="flex max-w-[780px] w-full items-center justify-between">
         <Link
           href="/"
-          className="flex flex-row align-center rounded underline decoration-4 decoration-red-400 underline-offset-4 text-3xl items-center"
+          className="flex flex-row align-center rounded underline decoration-4 decoration-red-400 underline-offset-4 text-3xl items-center dark:text-slate-200"
         >
           a.
         </Link>

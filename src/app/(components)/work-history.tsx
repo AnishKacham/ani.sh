@@ -11,7 +11,7 @@ export default async function WorkHistory() {
           <div className="w-full dark:border-slate-700 border-slate-200 border-t"></div>
         </div>
         <div className="w-full">
-          <div className="text-4xl font-extrabold w-full text-center">
+          <div className="text-4xl font-extrabold w-full text-center dark:text-slate-200">
             Work Experience
           </div>
         </div>

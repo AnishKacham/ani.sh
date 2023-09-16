@@ -6,19 +6,19 @@ import { PromiseSleep } from "./utils";
 interface IPost {
   content: string;
   slug: string;
-  title?: string;
-  summary?: string;
-  tags?: string[];
-  published?: boolean;
-  date?: string;
-  time?: number;
+  title: string;
+  summary: string;
+  tags: string[];
+  published: boolean;
+  date: Date;
+  time: number;
 }
 
 // TODO: Add caching to prevent unnecessary network waterfall
 export async function getPosts(): Promise<IPost[]> {
   // await PromiseSleep(5000);
   const blogPosts = await fs.readdir("src/app/(blogposts)/");
-
+  // @ts-ignore
   return Promise.all(
     blogPosts.map(async (blogpost) => {
       const filesInBlogPost = await fs.readdir(
