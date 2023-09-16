@@ -17,13 +17,13 @@ export function ExperienceToggle({
     changeTab(index);
   }
 
-  console.log(workExperiences);
+  // console.log(workExperiences);
 
   const companyButtons = workExperiences
     .sort(
       (a, b) =>
         new Date(b?.startdate ?? 0).getTime() -
-        new Date(a?.startdate ?? 0).getTime()
+        new Date(a?.startdate ?? 0).getTime(),
     )
     .map((exp, index) => {
       return (
@@ -33,13 +33,14 @@ export function ExperienceToggle({
           }}
           key={index}
           className={clsx(
-            "text-sm p-3 md:border-l md:border-b-0 border-b hover:text-red-400 hover:dark:bg-gray-700 hover:bg-slate-300 text-left dark:hover:bg-gray-700 hover:bg-slate-300",
+            "text-sm p-3 md:border-l md:border-b-0 border-b dark:hover:text-slate-400 hover:dark:bg-gray-700 hover:bg-slate-300 text-left dark:hover:bg-gray-700 hover:bg-slate-300",
             tabIndex == index
-              ? "border-red-400 text-red-400"
-              : "dark:border-gray-700 border-neutral-300 text-slate-400"
+              ? "dark:border-slate-200 border-red-400 dark:text-slate-400"
+              : "dark:border-gray-700 border-neutral-300 dark:text-slate-500",
           )}
         >
-          {exp.company}
+          <span> {exp.company} </span>
+          <span className="italic "> {exp.duration} </span>
         </button>
       );
     });
@@ -48,29 +49,29 @@ export function ExperienceToggle({
     <>
       <div className="flex-col hidden md:flex prose dark:prose-invert">
         <div className="not-prose flex flex-col">
-          <div className="text-xl font-semibold">
+          <div className="text-xl font-semibold dark:text-slate-400">
             {workExperiences[tabIndex].title}
-            <span className="text-red-400"> @ </span>
+            <span className="dark:text-slate-200"> @ </span>
             <Link
               target="_blank"
               href={workExperiences[tabIndex].url}
-              className="text-red-400 hover:underline underline-offset-4"
+              className="dark:text-slate-200 text-red-400 hover:underline underline-offset-4"
             >
               {" "}
               {workExperiences[tabIndex].company}
             </Link>
           </div>
           <div className="flex flex-row items-center">
-            <div className="text-sm">
+            <div className="text-sm text-slate-600 font-semibold">
               {new Date(workExperiences[tabIndex].startdate).toLocaleDateString(
                 "en-us",
-                { year: "numeric", month: "short" }
+                { year: "numeric", month: "short" },
               )}{" "}
               -{" "}
               {workExperiences[tabIndex].enddate == null
                 ? "Present"
                 : new Date(
-                    workExperiences[tabIndex].enddate
+                    workExperiences[tabIndex].enddate,
                   ).toLocaleDateString("en-us", {
                     year: "numeric",
                     month: "short",
@@ -80,9 +81,7 @@ export function ExperienceToggle({
         </div>
         <MDXRemote {...workExperiences[tabIndex].serializedContent} />
       </div>
-      <div className="flex md:flex-col flex-row">
-        {companyButtons}
-      </div>
+      <div className="flex md:flex-col flex-row">{companyButtons}</div>
       <div className="prose md:hidden flex flex-col dark:prose-invert">
         <MDXRemote {...workExperiences[tabIndex].serializedContent} />
       </div>

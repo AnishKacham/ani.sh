@@ -1,0 +1,58 @@
+---
+title: "About this project 😁"
+date: 2023-9-16
+published: "true"
+tags: ["NextJS", "Blog", "MDX"]
+time: 6
+summary: "Know about this website and why certain things are the way they are!"
+---
+
+# About this project 😁
+
+## Motivation
+
+I always wanted to have my own website that I keep up to date with all relevant aspects of my life that I would like to share with others.
+Also I was kind of getting bored and wanted to explore newer frameworks, hence this.
+
+## Features
+
+- #### Blog
+
+  This wasn't in my plan when I started building the website, but I decided to go ahead midway as it felt essential to document the stuff I did regularly.
+  What's better than putting together a place for that by yourself :P. It's pretty simple for now with a list of all the blogs in reverse chronological order.
+  Some other things I plan for it are, tags, Search by title, summary or tags. Maybe even a preview image.
+
+- #### KaTeX math
+
+  I've also added [KaTeX](https://katex.org/docs/supported) for easily writing math equations in the blog. So you could do something like:
+
+  $$
+    \oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA} \\
+  $$
+
+  by simply doing this in your code:
+
+  ```mdx
+  $$
+    \oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA} \\
+  $$
+  ```
+
+- #### Spotiy status
+
+  I've been a pretty regular user of spotify for a while now.
+  Although it's lost it's allure because of the [feud with Zee Music](https://www.billboard.com/pro/spotify-removes-indian-record-label-zee-music-company-catalog/)🤦,
+  but hey the recommendation algorithm is still pretty solid. Also the model seems to be well trained for me with well over a year's worth of listening data which I won't have
+  in case I shift to YT Music or something else.
+
+  Coming to the feature itself it was by far the most fun thing I've implemented for this project (especially the equalizer simulation).
+  As of today it just shows the current playing song or the most recently played one on Spotify. Again had some super interesting ideas to explore like,
+  picking the major color from the album art and using it as the background for the button, actually synchronising the equalizer to the beats of the song, etc.
+  Hopefully I'll get back to them soon.
+
+  I'd love to ship this equalizer version of spotify status as an npm package so one could use it on their github readme also.
+  For another day as I've never published an npm package before🫠.
+
+- #### Dark mode
+  I don't even know if it's huge enough for it to be here as it's pretty much standard nowadays.
+  The project would have felt incomplete without the dark mode support.

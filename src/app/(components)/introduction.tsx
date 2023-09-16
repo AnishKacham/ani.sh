@@ -14,15 +14,15 @@ export default function Introduction() {
           className="rounded-full h-20 w-20"
         />
       </div>
-      <div className="w-fit h-fit mt-10 text-5xl font-sans font-extrabold text-gray-900 dark:text-gray-100">
+      <div className="w-fit h-fit mt-10 text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400">
         <span>Hi, I am </span>
-        <span className="dark:text-red-400 text-red-500">Anish</span>
+        <span className="dark:text-slate-200 text-red-500">Anish</span>
       </div>
-      <div className="w-fit h-fit text-xl font-semibold text-gray-900 dark:text-gray-100 mt-2">
+      <div className="w-fit h-fit text-xl font-semibold text-gray-900 dark:text-slate-400 mt-2">
         <p>CS Undergrad from BITS Hyderabad,</p>
         <p>Full Stack Developer | SDE-1 @ NCR Corp.</p>
       </div>
-      <div className="mt-5 text-gray-900 dark:text-gray-100">
+      <div className="mt-5 text-gray-900 dark:text-slate-400">
         Building & designing meaningful software, solving architectural problems
         and writing quality code are few things that excite me. Currently
         writing logic for transactional systems in .NET and C++. Also quite

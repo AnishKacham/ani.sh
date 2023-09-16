@@ -57,7 +57,7 @@ export default async function MiniSpotify() {
           <div className="overflow-hidden w-20">
             <div
               className={clsx(
-                "text-sm whitespace-nowrap text-left w-fit",
+                "text-sm whitespace-nowrap text-left w-fit dark:text-slate-200",
                 spotifyData.name.length > 10 ? "animate-marquee-mini" : "",
               )}
             >

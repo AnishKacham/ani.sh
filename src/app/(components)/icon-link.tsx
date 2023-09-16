@@ -21,7 +21,7 @@ function IconLink({
   const defaultIconProps = {
     className: inverted
       ? `bg-red-500 dark:bg-red-400 text-slate-50 dark:text-slate-950`
-      : `text-gray-900 dark:text-gray-100`,
+      : `text-gray-900 dark:text-slate-400`,
   };
   return (
     <div>

@@ -26,7 +26,7 @@ export default function ProfilePicture() {
       let x = (scrollY * (fromX - toX)) / downDelay + toX;
       x = clamp(x, fromX, toX);
 
-      console.log(x, scale);
+      // console.log(x, scale);
 
       proPicRef.current?.style.setProperty(
         "--profile-image-transform",
