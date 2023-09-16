@@ -26,8 +26,17 @@ export default async function BlogPage() {
                   {post.time} min read
                 </div>
               </div>
-              <div className="mt-2 mb-4 dark:text-slate-400 text-slate-600">
+              <div className="mt-2 mb-4 dark:text-slate-400 text-slate-600 text-sm">
                 {post.summary}
+              </div>
+              <div className="mb-4 flex text-sm gap-2 flex-wrap">
+                {post.tags.map((tag) => {
+                  return (
+                    <span className="px-2 py-1 dark:bg-slate-800 bg-slate-300 dark:text-slate-200 rounded-full">
+                      {tag}
+                    </span>
+                  );
+                })}
               </div>
               <Link
                 href={"/blog/" + post.slug}
