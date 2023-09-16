@@ -17,7 +17,7 @@ export function ExperienceToggle({
     changeTab(index);
   }
 
-  console.log(workExperiences);
+  // console.log(workExperiences);
 
   const companyButtons = workExperiences
     .sort(

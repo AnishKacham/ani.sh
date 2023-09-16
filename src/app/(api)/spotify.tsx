@@ -67,7 +67,7 @@ export async function getNowPlaying() {
     });
     if (response.status === 204 || response.status > 400) {
       const profileData = await fetchProfile(access_token);
-      console.log(profileData);
+      // console.log(profileData);
       return {
         is_playing: false,
         isIdle: true,

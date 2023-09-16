@@ -2,7 +2,7 @@
 import IconLink from "./icon-link";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 
-export default function () {
+export default function ResumeButton() {
   return (
     <button
       onClick={() => {

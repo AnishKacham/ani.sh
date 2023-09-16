@@ -10,9 +10,9 @@ export default async function BlogPage() {
       </div>
       {posts
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .map((post) => {
+        .map((post, index) => {
           return (
-            <div className="w-full pt-4 text-left hover:rounded-sm">
+            <div key={index} className="w-full pt-4 text-left hover:rounded-sm">
               <div className="text-2xl font-semibold dark:text-slate-200">
                 {post.title}
               </div>
@@ -30,9 +30,12 @@ export default async function BlogPage() {
                 {post.summary}
               </div>
               <div className="mb-4 flex text-sm gap-2 flex-wrap">
-                {post.tags.map((tag) => {
+                {post.tags.map((tag, index) => {
                   return (
-                    <span className="px-2 py-1 dark:bg-slate-800 bg-slate-300 dark:text-slate-200 rounded-full">
+                    <span
+                      key={index}
+                      className="px-2 py-1 dark:bg-slate-800 bg-slate-300 dark:text-slate-200 rounded-full"
+                    >
                       {tag}
                     </span>
                   );

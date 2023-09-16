@@ -21,7 +21,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
-  useEffect(() => setMounted(true));
+  useEffect(() => setMounted(true), []);
   // use 82 px height if using the sticky profile picture component in home page
   // and py-4 for the returning div
   return (
