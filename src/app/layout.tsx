@@ -4,6 +4,7 @@ import Providers from "./providers";
 import Navbar from "./(components)/navbar";
 import BurgerMenu from "./(components)/burger-menu";
 import Footer from "./(components)/footer";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,14 +36,16 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={
-          `${inter.className}` +
-          " max-w-[780px] w-full self-center flex h-[100%] flex-col items-center justify-start bg-slate-50 dark:bg-slate-800 px-6 md:px-0 xl:px-0"
-        }
+        className={clsx(
+          inter.className,
+          "bg-slate-50 dark:bg-slate-800 px-6 md:px-0 xl:px-0",
+        )}
       >
         <Providers>
           <Navbar {...props} />
-          {children}
+          <div className="w-full self-center flex h-[100%] flex-col items-center justify-start">
+            <div className="max-w-[780px] w-full">{children}</div>
+          </div>
           <BurgerMenu {...props} />
           <Footer />
         </Providers>

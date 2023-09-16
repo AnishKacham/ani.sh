@@ -23,7 +23,7 @@ export function ExperienceToggle({
     .sort(
       (a, b) =>
         new Date(b?.startdate ?? 0).getTime() -
-        new Date(a?.startdate ?? 0).getTime()
+        new Date(a?.startdate ?? 0).getTime(),
     )
     .map((exp, index) => {
       return (
@@ -36,7 +36,7 @@ export function ExperienceToggle({
             "text-sm p-3 md:border-l md:border-b-0 border-b hover:text-red-400 hover:dark:bg-gray-700 hover:bg-slate-300 text-left dark:hover:bg-gray-700 hover:bg-slate-300",
             tabIndex == index
               ? "border-red-400 text-red-400"
-              : "dark:border-gray-700 border-neutral-300 text-slate-400"
+              : "dark:border-gray-700 border-neutral-300 text-slate-400",
           )}
         >
           {exp.company}
@@ -64,13 +64,13 @@ export function ExperienceToggle({
             <div className="text-sm">
               {new Date(workExperiences[tabIndex].startdate).toLocaleDateString(
                 "en-us",
-                { year: "numeric", month: "short" }
+                { year: "numeric", month: "short" },
               )}{" "}
               -{" "}
               {workExperiences[tabIndex].enddate == null
                 ? "Present"
                 : new Date(
-                    workExperiences[tabIndex].enddate
+                    workExperiences[tabIndex].enddate,
                   ).toLocaleDateString("en-us", {
                     year: "numeric",
                     month: "short",
@@ -80,9 +80,7 @@ export function ExperienceToggle({
         </div>
         <MDXRemote {...workExperiences[tabIndex].serializedContent} />
       </div>
-      <div className="flex md:flex-col flex-row">
-        {companyButtons}
-      </div>
+      <div className="flex md:flex-col flex-row">{companyButtons}</div>
       <div className="prose md:hidden flex flex-col dark:prose-invert">
         <MDXRemote {...workExperiences[tabIndex].serializedContent} />
       </div>
