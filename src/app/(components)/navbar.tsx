@@ -25,11 +25,11 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
   // use 82 px height if using the sticky profile picture component in home page
   // and py-4 for the returning div
   return (
-    <div className="z-50 sticky top-0 flex w-full py-4 h-fit supports-backdrop-blur:bg-white/95 backdrop-blur justify-center">
+    <div className="z-50 sticky top-0 flex w-full py-2 h-fit supports-backdrop-blur:bg-white/95 backdrop-blur justify-center">
       <div className="flex max-w-[780px] w-full items-center justify-between">
         <Link
           href="/"
-          className="flex flex-row align-center rounded underline decoration-4 decoration-red-400 underline-offset-4 text-3xl items-center dark:text-slate-200"
+          className="flex flex-row align-center rounded underline decoration-4 decoration-red-400 underline-offset-4 text-3xl items-center dark:text-slate-200 pb-2"
         >
           a.
         </Link>
