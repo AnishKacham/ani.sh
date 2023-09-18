@@ -47,7 +47,7 @@ export default function RootLayout({
             <div className="max-w-[780px] w-full">{children}</div>
           </div>
           <BurgerMenu {...props} />
-          <Footer />
+          <Footer {...props} />
         </Providers>
       </body>
     </html>
