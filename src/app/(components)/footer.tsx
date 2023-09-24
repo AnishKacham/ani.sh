@@ -15,7 +15,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
   ];
   return (
     <div className="flex flex-col items-center mt-auto">
-      <div className="border-t border-gray-700 max-w-[780px] w-full mt-28 py-4 flex flex-row items-center justify-between">
+      <div className="border-t dark:border-gray-700 border-slate-300 max-w-[780px] w-full mt-28 py-4 flex flex-row items-center justify-between">
         <div className="flex flex-row items-center">
           {navItemsWithHome.map((item) => {
             return (
@@ -40,7 +40,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
         </div>
       </div>
 
-      <div className="h-fit w-full dark:border-slate-600 border-slate-400 text-sm dark:text-slate-400 text-slate-600 text-center">
+      <div className="h-fit w-full text-sm dark:text-slate-400 text-slate-600 text-center">
         made with ❤️ by anish
       </div>
     </div>

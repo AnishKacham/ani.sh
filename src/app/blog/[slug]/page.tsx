@@ -2,6 +2,7 @@ import { PostBody } from "@/app/blog/[slug]/(components)/post-body";
 import { getPost } from "@/app/(api)/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { AUTHORS } from "@/app/constants";
 
 export default async function BlogPage({
   params,
@@ -17,7 +18,28 @@ export default async function BlogPage({
       <Link href="/blog" className="text-red-500 hover:text-red-400">
         {"<- "}Back to All posts
       </Link>
-      <PostBody>{post?.content}</PostBody>
+      <div className="">
+        <h1 className="text-4xl font-extrabold dark:text-white">
+          {post.title}
+        </h1>
+        <div>
+          <Link
+            className="dark:text-teal-500 text-teal-600 hover:underline"
+            href={AUTHORS[post.author].url}
+          >
+            {AUTHORS[post.author].name}
+          </Link>
+          <span> • </span>
+          <span>
+            {new Date(post.date).toLocaleDateString("en-us", {
+              day: "numeric",
+              year: "numeric",
+              month: "long",
+            })}
+          </span>
+        </div>
+      </div>
+      <PostBody>{post.content}</PostBody>
     </div>
   );
 }

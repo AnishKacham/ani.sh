@@ -75,3 +75,16 @@ export const EMOJIS = [
   "🏃‍♂️🏃‍♀️",
   "🔮🃏",
 ];
+
+type IAuthors = {
+  [key: string]: {
+    name: string;
+    url: string;
+  };
+};
+export const AUTHORS: IAuthors = {
+  anish: {
+    name: "Anish Kacham",
+    url: "https://x.com/anishKach?t=lqwNg4n15mY_sIriBO6g2g&s=09",
+  },
+};

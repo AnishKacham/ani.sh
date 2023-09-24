@@ -1,5 +1,6 @@
 import { getPosts } from "../(api)/blog";
 import Link from "next/link";
+import { AUTHORS } from "../constants";
 
 export default async function BlogPage() {
   const posts = await getPosts();
@@ -17,14 +18,21 @@ export default async function BlogPage() {
                 {post.title}
               </div>
               <div className="text-sm dark:text-slate-400 text-neutral-500">
-                {new Date(post.date).toLocaleDateString("en-us", {
-                  day: "numeric",
-                  year: "numeric",
-                  month: "long",
-                })}{" "}
-                <div className="inline-block dark:text-slate-500 ml-2">
-                  {post.time} min read
-                </div>
+                <Link
+                  href={AUTHORS[post.author].url}
+                  className="dark:text-teal-500 text-teal-600 hover:underline"
+                >
+                  {AUTHORS[post.author].name}
+                </Link>
+                <span> • </span>
+                <span>
+                  {new Date(post.date).toLocaleDateString("en-us", {
+                    day: "numeric",
+                    year: "numeric",
+                    month: "long",
+                  })}{" "}
+                </span>
+                <div className="dark:text-slate-500">{post.time} min read</div>
               </div>
               <div className="mt-2 mb-4 dark:text-slate-400 text-slate-600 text-sm">
                 {post.summary}

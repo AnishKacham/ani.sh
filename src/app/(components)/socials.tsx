@@ -25,7 +25,10 @@ const Socials = () => {
           Icon={GitHubIcon}
           href="https://github.com/AnishKacham"
         />
-        <a href="https://twitter.com/anishKach" target="_blank">
+        <a
+          href="https://x.com/anishKach?t=lqwNg4n15mY_sIriBO6g2g&s=09"
+          target="_blank"
+        >
           <WrapSvg name="X" className="w-[18px] mb-0.5" />
         </a>
         <a href="https://codeforces.com/profile/noGoodHandles" target="_blank">

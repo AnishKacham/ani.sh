@@ -13,6 +13,7 @@ interface IPost {
   published: boolean;
   date: Date;
   time: number;
+  author: string;
 }
 
 // TODO: Add caching to prevent unnecessary network waterfall
