@@ -28,7 +28,10 @@ export default function ProjectCard(props: IProjectCard) {
       <div className="flex gap-2 mt-auto mb-2 text-sm">
         {props.tags.map((tag, index) => {
           return (
-            <span key={index} className="dark:text-slate-500">
+            <span
+              key={index}
+              className="px-2.5 py-0.5 dark:bg-slate-800 bg-slate-300 dark:text-slate-200 rounded text-sm font-medium border dark:border-slate-200 border-slate-800"
+            >
               {tag}
             </span>
           );

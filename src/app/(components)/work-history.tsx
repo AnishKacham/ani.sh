@@ -5,7 +5,7 @@ export default async function WorkHistory() {
   const workExperiences = await getExperienceItems();
 
   return (
-    <div className="mt-32 w-full flex flex-col">
+    <div className="mt-20 w-full flex flex-col">
       <div className="md:grid flex flex-col grid-cols-[1fr_max-content] gap-8">
         <div className="flex flex-row items-center">
           <div className="w-full dark:border-slate-700 border-slate-200 border-t"></div>

@@ -42,7 +42,7 @@ export default async function BlogPage() {
                   return (
                     <span
                       key={index}
-                      className="px-2 py-1 dark:bg-slate-800 bg-slate-300 dark:text-slate-200 rounded-full"
+                      className="px-2.5 py-0.5 dark:bg-slate-800 bg-slate-300 dark:text-slate-200 rounded text-sm font-medium border dark:border-slate-200 border-slate-800"
                     >
                       {tag}
                     </span>
