@@ -3,15 +3,33 @@ import { getPost } from "@/app/(api)/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { AUTHORS } from "@/app/constants";
+import { Metadata } from "next";
 
-export default async function BlogPage({
-  params,
-}: {
+type IBlogSlugProps = {
   params: {
     slug: string;
   };
-}) {
-  const post = await getPost(params.slug);
+};
+
+export async function generateMetadata(
+  props: IBlogSlugProps
+): Promise<Metadata> {
+  const post = await getPost(props.params.slug);
+  if (!post)
+    return {
+      title: "Blog Post",
+    };
+
+  return {
+    title: {
+      absolute: `${post.title} | ${post.author}`,
+    },
+    description: post.summary,
+  };
+}
+
+export default async function BlogPage(props: IBlogSlugProps) {
+  const post = await getPost(props.params.slug);
   if (!post) return notFound();
   return (
     <div className="flex flex-col py-10 w-full gap-4">

@@ -5,6 +5,21 @@ import Navbar from "./(components)/navbar";
 import BurgerMenu from "./(components)/burger-menu";
 import Footer from "./(components)/footer";
 import clsx from "clsx";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Anish Kacham",
+    template: "%s | Anish Kacham",
+  },
+  description:
+    "Anish Kacham is a software engineer building meaningful software and experiences for the industry.",
+  applicationName: "ani.sh",
+  colorScheme: "dark",
+  icons: {
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
+};
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +53,7 @@ export default function RootLayout({
       <body
         className={clsx(
           inter.className,
-          "bg-slate-50 dark:bg-slate-900 dark:bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-950 via-slate-900 to-slate-800 via-75% dark:text-slate-400 px-6 md:px-0 xl:px-0",
+          "bg-slate-50 dark:bg-slate-900 dark:bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-950 via-slate-900 to-slate-800 via-75% dark:text-slate-400 px-6 md:px-0 xl:px-0"
         )}
       >
         <Providers>
