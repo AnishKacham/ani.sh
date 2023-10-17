@@ -8,15 +8,15 @@ import { Suspense } from "react";
 export default function Introduction() {
   return (
     <>
-      <div className="grid grid-cols-[auto_1fr] gap-5 mt-20">
+      <div className="flex flex-col sm:grid grid-cols-[auto_1fr] gap-5 mt-20">
         <Image
           src={ProfilePicture}
           width={228}
           alt="profile-picture"
-          className="rounded-md"
+          className="rounded-md self-center"
         />
         <div className="flex flex-col">
-          <div className="w-fit h-fit text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400 self-center">
+          <div className="w-fit h-fit text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400 text-center self-center">
             <span>Hi, I am </span>
             <span className="dark:text-slate-200 text-red-500">Anish</span>
           </div>
@@ -32,7 +32,7 @@ export default function Introduction() {
           </div>
         </div>
         <Socials />
-        <div className="flex flex-row gap-2 justify-center">
+        <div className="flex flex-row gap-2 justify-center flex-wrap">
           <img className="h-[24px]" src="https://skillicons.dev/icons?i=cpp" />
           <img
             className="h-[24px]"

@@ -8,7 +8,7 @@ import { WrapSvg } from "./svg-wrap";
 const Socials = () => {
   return (
     <>
-      <div className="flex flex-row gap-4 items-end w-full justify-center">
+      <div className="flex flex-row gap-4 items-end w-full justify-center flex-wrap">
         <IconLink
           target="_blank"
           Icon={EmailIcon}

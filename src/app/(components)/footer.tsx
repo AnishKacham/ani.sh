@@ -15,8 +15,8 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
   ];
   return (
     <div className="flex flex-col items-center mt-auto">
-      <div className="border-t dark:border-gray-700 border-slate-300 max-w-[780px] w-full mt-28 py-4 flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center">
+      <div className="border-t dark:border-gray-700 border-slate-300 max-w-[780px] w-full mt-28 py-4 flex flex-col sm:flex-row items-center justify-between flex-wrap">
+        <div className="flex flex-row flex-wrap">
           {navItemsWithHome.map((item) => {
             return (
               <Link
@@ -26,7 +26,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
                   "flex align-center px-2 py-1 rounded",
                   route === "/" + item.key
                     ? "text-red-400"
-                    : "hover:text-red-400",
+                    : "hover:text-red-400"
                 )}
               >
                 {item.label}
@@ -34,7 +34,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
             );
           })}
         </div>
-        <div className="px-2 py-1 align-center text-sm">
+        <div className="px-2 py-1 text-center text-sm">
           {" "}
           © 2023 Anish Kacham
         </div>
