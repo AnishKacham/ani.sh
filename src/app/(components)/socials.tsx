@@ -2,14 +2,13 @@
 import IconLink from "./icon-link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import { WrapSvg } from "./svg-wrap";
 
 const Socials = () => {
   return (
     <>
-      <div className="mt-5 flex flex-row gap-4 items-end">
+      <div className="flex flex-row gap-4 items-end w-full justify-center">
         <IconLink
           target="_blank"
           Icon={EmailIcon}
@@ -34,11 +33,6 @@ const Socials = () => {
         <a href="https://codeforces.com/profile/noGoodHandles" target="_blank">
           <WrapSvg name="Codeforces" className="h-[24px]" />
         </a>
-        {/* <IconLink
-          target="_blank"
-          Icon={InstagramIcon}
-          href="https://www.instagram.com/_.o0anish0o._/"
-        /> */}
       </div>
     </>
   );
