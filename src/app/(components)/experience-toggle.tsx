@@ -5,6 +5,8 @@ import { IExperienceItem } from "../(api)/experience";
 import clsx from "clsx";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export function ExperienceToggle({
   workExperiences,
@@ -12,6 +14,7 @@ export function ExperienceToggle({
   workExperiences: IExperienceItem[];
 }) {
   const [tabIndex, changeTab] = useState(0);
+  const { resolvedTheme } = useTheme();
 
   function handleCompanyButtonClick(exp: IExperienceItem, index: number) {
     changeTab(index);
@@ -49,17 +52,39 @@ export function ExperienceToggle({
     <>
       <div className="flex-col hidden md:flex prose dark:prose-invert">
         <div className="not-prose flex flex-col">
-          <div className="text-xl font-semibold dark:text-slate-400">
+          <div className="text-xl font-semibold dark:text-slate-400 flex flex-row items-center gap-2">
             {workExperiences[tabIndex].title}
-            <span className="dark:text-slate-200"> @ </span>
-            <Link
-              target="_blank"
-              href={workExperiences[tabIndex].url}
-              className="dark:text-slate-200 text-red-400 hover:underline underline-offset-4"
-            >
-              {" "}
-              {workExperiences[tabIndex].company}
-            </Link>
+            <span className="dark:text-slate-200 text-center"> @ </span>
+            {workExperiences[tabIndex].logolight && resolvedTheme == "light" ? (
+              <Link target="_blank" href={workExperiences[tabIndex].url}>
+                {" "}
+                <img
+                  src={workExperiences[tabIndex].logolight}
+                  height={28}
+                  width={100}
+                  alt="company-logo"
+                />
+              </Link>
+            ) : workExperiences[tabIndex].logodark &&
+              resolvedTheme == "dark" ? (
+              <Link target="_blank" href={workExperiences[tabIndex].url}>
+                {" "}
+                <img
+                  src={workExperiences[tabIndex].logodark}
+                  height={28}
+                  width={100}
+                  alt="company-logo"
+                />
+              </Link>
+            ) : (
+              <Link
+                target="_blank"
+                href={workExperiences[tabIndex].url}
+                className="dark:text-slate-200 text-red-400 hover:underline underline-offset-4"
+              >
+                {workExperiences[tabIndex].company}
+              </Link>
+            )}
           </div>
           <div className="flex flex-row items-center">
             <div className="text-sm text-slate-600 font-semibold">

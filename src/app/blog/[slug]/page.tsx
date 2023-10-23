@@ -12,7 +12,7 @@ type IBlogSlugProps = {
 };
 
 export async function generateMetadata(
-  props: IBlogSlugProps
+  props: IBlogSlugProps,
 ): Promise<Metadata> {
   const post = await getPost(props.params.slug);
   if (!post)

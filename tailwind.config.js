@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         spotify: "#1db954",
+        ncratleos: "#004e42",
       },
       animation: {
         marquee: "marquee 4s linear infinite",

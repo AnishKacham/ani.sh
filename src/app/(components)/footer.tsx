@@ -26,7 +26,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
                   "flex align-center px-2 py-1 rounded",
                   route === "/" + item.key
                     ? "text-red-400"
-                    : "hover:text-red-400"
+                    : "hover:text-red-400",
                 )}
               >
                 {item.label}
