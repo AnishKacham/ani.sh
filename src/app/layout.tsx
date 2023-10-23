@@ -53,7 +53,7 @@ export default function RootLayout({
       <body
         className={clsx(
           inter.className,
-          "bg-slate-50 dark:bg-slate-900 dark:bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-950 via-slate-900 to-slate-800 via-75% dark:text-slate-400 px-6 md:px-0 xl:px-0"
+          "bg-slate-50 dark:bg-slate-900 dark:bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-950 via-slate-900 to-slate-800 via-75% dark:text-slate-400 px-6 md:px-0 xl:px-0",
         )}
       >
         <Providers>

@@ -16,6 +16,8 @@ export interface IExperienceItem {
   title: string;
   startdate: Date;
   enddate: Date;
+  logolight: string;
+  logodark: string;
 }
 
 export const getExperienceItems = cache(
