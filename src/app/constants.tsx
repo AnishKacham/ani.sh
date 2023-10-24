@@ -5,11 +5,25 @@ export const {
 } = process.env;
 
 export const basic = Buffer.from(`${client_id}:${client_secret}`).toString(
-  "base64",
+  "base64"
 );
 export const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 export const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 export const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;
+
+const enum CONTEXT_NUM {
+  "PERSONAL_PROJECT",
+  "SE_COURSE_PROJECT",
+  "OOP_COURSE_PROJECT",
+  "DBMS_COURSE_PROJECT",
+}
+
+const PROJECT_CONTEXTS = [
+  { topic: "Personal Project", color: "blue-400" },
+  { topic: "SE Course Project", color: "yellow-400" },
+  { topic: "DBMS Course Project", color: "rose-500" },
+  { topic: "OOP Course Project", color: "emerald-500" },
+];
 
 export const PROJECTS = [
   {
@@ -18,6 +32,7 @@ export const PROJECTS = [
       "A selenium webdriver script that continuosly checks if any seats have opened for a particular course and alerts you. Attempted to make it Multithreaded",
     tags: ["Python", "Selenium Web Driver"],
     github: "https://github.com/AnishKacham/ERP-Course-Notifier",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
   },
   {
     title: "G-overflow",
@@ -25,6 +40,7 @@ export const PROJECTS = [
       "A stackoverflow clone for uni students. Upvote, Downvote, Mark as best, Comment and share posts and answers. A More SDLC related project",
     tags: ["MERN", "SDLC"],
     github: "https://github.com/AnishKacham/SEISF341",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.SE_COURSE_PROJECT],
   },
   {
     title: "Dodoshows",
@@ -32,6 +48,7 @@ export const PROJECTS = [
       "Movie booking website emulation with a synthetic database. Book tickets, write reviews, rate movies, make shared and personal watchlists with friends on the platform",
     tags: ["Flask", "React", "MySQL", "Bootstrap"],
     github: "https://github.com/AnishKacham/dodoshows",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.DBMS_COURSE_PROJECT],
   },
   {
     title: "Task Tracker",
@@ -39,6 +56,7 @@ export const PROJECTS = [
       "A place to track your shopping list / grocery lists, etc. Supports shared lists in case you have a roommate. Also maintain a daily diary and set reminders for tasks sent through email",
     tags: ["Springboot", "DOM Manipulation"],
     github: "https://github.com/AnishKacham/task-tracker-new",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.OOP_COURSE_PROJECT],
   },
   {
     title: "Google Search Page",
@@ -47,6 +65,7 @@ export const PROJECTS = [
     tags: ["CSS", "HTML"],
     link: "https://anishkacham.github.io/google-homepage/",
     github: "https://github.com/anishKacham/google-homepage/",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
   },
   {
     title: "Personal Website v1",
@@ -55,25 +74,8 @@ export const PROJECTS = [
     tags: ["NextJS", "SSR", "Blog"],
     link: "https://anish-v1.vercel.app",
     github: "https://github.com/anishKacham/v1",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
   },
-];
-
-export const EMOJIS = [
-  "✨",
-  "🪄🧙‍♂️",
-  "🎊",
-  "🎉",
-  "💫",
-  "🐲🌹",
-  "😍",
-  "💝",
-  "🥏",
-  "😰",
-  "🫥",
-  "🖖",
-  "🐇",
-  "🏃‍♂️🏃‍♀️",
-  "🔮🃏",
 ];
 
 type IAuthors = {

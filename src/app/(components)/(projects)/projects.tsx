@@ -1,27 +1,8 @@
-"use client";
 import Link from "next/link";
 import ProjectCard from "./project-card";
-import { EMOJIS, PROJECTS } from "@/app/constants";
-import { useState } from "react";
-import ShuffleButtons from "./shuffle-buttons";
-
-export function shuffleArray(a: any[]): void {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    let temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
-  }
-}
-
-function useForceUpdate() {
-  const [value, setValue] = useState(0);
-  return () => setValue((value) => value + 1);
-}
+import { PROJECTS } from "@/app/constants";
 
 export default function Projects() {
-  const forceUpdate = useForceUpdate();
-
   return (
     <div className="mt-32 w-full flex flex-col">
       <div className="md:grid flex flex-col grid-cols-[max-content_1fr] items-center gap-8">
@@ -36,7 +17,6 @@ export default function Projects() {
       >
         view the archvie
       </Link>
-      <ShuffleButtons shufflehandler={forceUpdate} />
       <div className="flex flex-col sm:grid mt-5 grid-cols-2 gap-3">
         {PROJECTS.map((project, index) => {
           return <ProjectCard key={index} {...{ ...project, index }} />;

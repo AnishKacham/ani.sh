@@ -4,4 +4,5 @@ export type IProject = {
   tags: string[];
   link?: string;
   github: string;
+  context: { topic: string; color: string };
 };
