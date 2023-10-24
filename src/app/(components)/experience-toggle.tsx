@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IExperienceItem } from "../(api)/experience";
 import clsx from "clsx";
 import Link from "next/link";
@@ -15,6 +15,11 @@ export function ExperienceToggle({
 }) {
   const [tabIndex, changeTab] = useState(0);
   const { resolvedTheme } = useTheme();
+  const [client, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  });
 
   function handleCompanyButtonClick(exp: IExperienceItem, index: number) {
     changeTab(index);
@@ -55,7 +60,9 @@ export function ExperienceToggle({
           <div className="text-xl font-semibold dark:text-slate-400 flex flex-row items-center gap-2">
             {workExperiences[tabIndex].title}
             <span className="dark:text-slate-200 text-center"> @ </span>
-            {workExperiences[tabIndex].logolight && resolvedTheme == "light" ? (
+            {client &&
+            workExperiences[tabIndex].logolight &&
+            resolvedTheme == "light" ? (
               <Link target="_blank" href={workExperiences[tabIndex].url}>
                 {" "}
                 <img
@@ -65,7 +72,8 @@ export function ExperienceToggle({
                   alt="company-logo"
                 />
               </Link>
-            ) : workExperiences[tabIndex].logodark &&
+            ) : client &&
+              workExperiences[tabIndex].logodark &&
               resolvedTheme == "dark" ? (
               <Link target="_blank" href={workExperiences[tabIndex].url}>
                 {" "}

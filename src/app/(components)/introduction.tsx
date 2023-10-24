@@ -14,6 +14,7 @@ export default function Introduction() {
           width={228}
           alt="profile-picture"
           className="rounded-md self-center"
+          priority
         />
         <div className="flex flex-col">
           <div className="w-fit h-fit text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400 text-center self-center">
