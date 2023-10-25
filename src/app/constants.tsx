@@ -19,10 +19,10 @@ const enum CONTEXT_NUM {
 }
 
 const PROJECT_CONTEXTS = [
-  { topic: "Personal Project", color: "blue-400" },
-  { topic: "SE Course Project", color: "yellow-400" },
-  { topic: "DBMS Course Project", color: "rose-500" },
-  { topic: "OOP Course Project", color: "emerald-500" },
+  { topic: "Personal Project", color: "bg-blue-400" },
+  { topic: "SE Course Project", color: "bg-yellow-400" },
+  { topic: "DBMS Course Project", color: "bg-rose-500" },
+  { topic: "OOP Course Project", color: "bg-emerald-500" },
 ];
 
 export const PROJECTS = [

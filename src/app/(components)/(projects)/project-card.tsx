@@ -20,7 +20,7 @@ export default function ProjectCard(props: IProjectCard) {
           <ProjectIcons {...props} />
           <span
             className={clsx(
-              `${"bg-" + props.context.color}`,
+              `${props.context.color}`,
               "px-4 text-sm font-bold text-gray-950 rounded-l-full"
             )}
           >
