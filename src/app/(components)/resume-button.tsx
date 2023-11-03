@@ -7,7 +7,7 @@ export default function ResumeButton() {
     <button
       onClick={() => {
         window.open(
-          "https://drive.google.com/file/d/1ZuoquaYrOLihQmgd4GyvG5vvaYu51U9I/view?usp=sharing",
+          "https://drive.google.com/file/d/1CO_FFaAyxlh0BlVG295_IFUm94w6yz98/view?usp=sharing",
           "_blank",
         );
       }}
