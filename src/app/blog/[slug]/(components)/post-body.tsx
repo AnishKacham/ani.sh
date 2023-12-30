@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkToc from "remark-toc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import imageSize from "rehype-img-size";
 import { mdxComponents } from "./mdx-components";
 
 export function PostBody({ children }: { children: string }) {
@@ -16,7 +17,13 @@ export function PostBody({ children }: { children: string }) {
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm, remarkToc, remarkMath],
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeKatex],
+            rehypePlugins: [
+              //@ts-ignore
+              [imageSize, { dir: "src/app/(blogPosts)" }],
+              rehypeSlug,
+              rehypeAutolinkHeadings,
+              rehypeKatex,
+            ],
           },
         }}
         components={mdxComponents}

@@ -11,4 +11,11 @@ Code.theme = {
 
 export const mdxComponents: MDXComponents = {
   pre: Code,
+  Ic: ({ children }) => {
+    return (
+      <span className="inline text-sm bg-gray-700 rounded font-mono text-white px-1">
+        {children}
+      </span>
+    );
+  },
 };
