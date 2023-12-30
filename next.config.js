@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["simg-ssl.duolingo.com", "i.scdn.co"],
+    remotePatterns: [{
+      protocol: "https",
+      hostname: "simg-ssl.duolingo.com",
+    },
+    {
+      protocol: "https",
+      hostname: "i.scdn.co"
+    }],
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports

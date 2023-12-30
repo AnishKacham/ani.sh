@@ -23,7 +23,7 @@ export default function Introduction() {
           </div>
           <div className="w-fit h-fit text-xl font-semibold text-gray-900 dark:text-slate-400 mt-2 text-center">
             CS Undergrad from BITS Hyderabad, Full Stack Developer | SDE-1 @ NCR
-            Corp.
+            Atleos
           </div>
           <div className="mt-5 text-gray-900 dark:text-slate-400 text-center">
             Building & designing meaningful software, solving architectural

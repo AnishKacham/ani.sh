@@ -35,7 +35,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
         </Link>
 
         <div className="flex flex-row items-center">
-          <div className="hidden sm:flex flex gap-4 rounded-lg px-8 font-medium text-gray-900 dark:text-gray-100">
+          <div className="flex gap-2 rounded-lg px-2 sm:px-8 font-medium text-gray-900 dark:text-gray-100">
             {navItems.map((item) => {
               return (
                 <Link
@@ -45,7 +45,7 @@ export default function Navbar({ navItems }: { navItems: INavBarProps[] }) {
                     "flex align-center px-2 py-1 rounded",
                     route === "/" + item.key
                       ? "text-red-400 bg-gray-200 dark:bg-gray-700"
-                      : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700",
+                      : "hover:text-red-400 hover:bg-gray-200 dark:hover:bg-gray-700"
                   )}
                 >
                   {item.label}
