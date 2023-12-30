@@ -5,7 +5,7 @@ import Navbar from "./(components)/navbar";
 import BurgerMenu from "./(components)/burger-menu";
 import Footer from "./(components)/footer";
 import clsx from "clsx";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: {
@@ -15,10 +15,13 @@ export const metadata: Metadata = {
   description:
     "Anish Kacham is a software engineer building meaningful software and experiences for the industry.",
   applicationName: "ani.sh",
-  colorScheme: "dark",
   icons: {
     apple: [{ url: "/apple-touch-icon.png" }],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "black",
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,10 +33,10 @@ export default function RootLayout({
 }) {
   const props = {
     navItems: [
-      // {
-      //   key: "about",
-      //   label: "about",
-      // },
+      {
+        key: "",
+        label: "home",
+      },
       {
         key: "blog",
         label: "blog",

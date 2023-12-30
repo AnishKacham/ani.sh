@@ -6,18 +6,12 @@ import clsx from "clsx";
 
 export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
   const route = usePathname();
-  const navItemsWithHome = [
-    {
-      label: "home",
-      key: "",
-    },
-    ...navItems,
-  ];
+
   return (
     <div className="flex flex-col items-center mt-auto">
       <div className="border-t dark:border-gray-700 border-slate-300 max-w-[780px] w-full mt-28 py-4 flex flex-col sm:flex-row items-center justify-between flex-wrap">
         <div className="flex flex-row flex-wrap">
-          {navItemsWithHome.map((item) => {
+          {navItems.map((item) => {
             return (
               <Link
                 href={`\/` + `${item.key}`}
@@ -26,7 +20,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
                   "flex align-center px-2 py-1 rounded",
                   route === "/" + item.key
                     ? "text-red-400"
-                    : "hover:text-red-400",
+                    : "hover:text-red-400"
                 )}
               >
                 {item.label}
