@@ -33,6 +33,7 @@ export const PROJECTS = [
     tags: ["Python", "Selenium Web Driver"],
     github: "https://github.com/AnishKacham/ERP-Course-Notifier",
     context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
+    cover_image: "/previews/erp-notifier-preview.jpeg",
   },
   {
     title: "G-overflow",
@@ -66,6 +67,7 @@ export const PROJECTS = [
     link: "https://anishkacham.github.io/google-homepage/",
     github: "https://github.com/anishKacham/google-homepage/",
     context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
+    cover_image: "/previews/google-homepage.png",
   },
   {
     title: "Personal Website v1",
@@ -75,6 +77,7 @@ export const PROJECTS = [
     link: "https://anish-v1.vercel.app",
     github: "https://github.com/anishKacham/v1",
     context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
+    cover_image: "/previews/blog-preview.png",
   },
 ];
 

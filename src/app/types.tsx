@@ -5,4 +5,5 @@ export type IProject = {
   link?: string;
   github: string;
   context: { topic: string; color: string };
+  cover_image?: string;
 };
