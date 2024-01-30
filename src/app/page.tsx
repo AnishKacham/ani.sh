@@ -2,7 +2,7 @@ import ResumeButton from "./(components)/resume-button";
 import { Suspense } from "react";
 import MiniSpotify from "./(components)/mini-spotify";
 import WorkHistory from "./(components)/work-history";
-import Projects from "./(components)/(projects)";
+import Projects from "./(components)/(projects)/projects";
 import Introduction from "./(components)/introduction";
 
 export default function Home() {

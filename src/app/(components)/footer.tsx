@@ -30,7 +30,7 @@ export default function Footer({ navItems }: { navItems: INavBarProps[] }) {
         </div>
         <div className="px-2 py-1 text-center text-sm">
           {" "}
-          © 2024 Anish Kacham
+          © 2023 Anish Kacham
         </div>
       </div>
 
