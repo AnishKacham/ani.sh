@@ -76,6 +76,24 @@ export const PROJECTS = [
     github: "https://github.com/anishKacham/v1",
     context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
   },
+  {
+    title: "Badge Components in ReactJS",
+    description:
+      "Search from a list of users that get added to a text field. Hit backspace once to highlight the user, hit backspace again to delete the user from the text field",
+    tags: ["ReactJS", "TailwindCSS"],
+    link: "https://zeptofe.vercel.app/",
+    github: "https://github.com/AnishKacham/zeptofe",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
+  },
+  {
+    title: "Aircall, assignment for Speer",
+    description:
+      "Fetches data from an api and displays a call log. Archive and unarchive individual calls or all at once. Since networks are unreliable the number of failed operations shown in a pop up",
+    github: "https://github.com/AnishKacham/aircall",
+    tags: ["ReactJS", "REST", "Material UI"],
+    link: "https://anish-kacham-aircall.netlify.app/",
+    context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
+  },
 ];
 
 type IAuthors = {
