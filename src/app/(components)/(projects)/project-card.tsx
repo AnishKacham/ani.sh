@@ -9,12 +9,7 @@ export type IProjectCard = IProject & {
 
 export default function ProjectCard(props: IProjectCard) {
   return (
-    <Link
-      href={props.link ? props.link : props.github}
-      target="_blank"
-      className="flex h-full w-full flex flex-col dark:hover:bg-gray-700 hover:bg-slate-300 border-slate-300 dark:border-gray-700 border rounded-md p-4 pr-0"
-      suppressHydrationWarning
-    >
+    <div className="flex h-full w-full flex flex-col border-slate-300 dark:border-gray-700 border p-4 pr-0">
       <div className="">
         <div className="flex flex-row justify-between items-center my-2">
           <ProjectIcons {...props} />
@@ -46,6 +41,6 @@ export default function ProjectCard(props: IProjectCard) {
           })}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
