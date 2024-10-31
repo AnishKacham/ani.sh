@@ -8,7 +8,8 @@ import { Suspense } from "react";
 export default function Introduction() {
   return (
     <>
-      <div className="flex flex-col sm:grid grid-cols-[auto_1fr] gap-5 mt-20">
+      <div className="flex flex-col sm:grid grid gap-5 mt-20 w-full">
+        <div className="self-center flex flex-col">
         <Image
           src={ProfilePicture}
           width={228}
@@ -16,20 +17,18 @@ export default function Introduction() {
           className="rounded-md self-center"
           priority
         />
+        </div>
         <div className="flex flex-col">
-          <div className="w-fit h-fit text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400 text-center self-center">
-            <span>Hi, I am </span>
-            <span className="dark:text-slate-200 text-red-500">Anish</span>
+          <div className="w-fit h-fit text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400 self-center text-center">
+            <span className="dark:text-red-400 text-red-600">Anish Kacham</span>
           </div>
-          <div className="w-fit h-fit text-xl font-semibold text-gray-900 dark:text-slate-400 mt-2 text-center">
-            CS Undergrad from BITS Hyderabad, Full Stack Developer | SDE-1 @ NCR
-            Atleos
+          <div className="w-fit h-fit text-3xl text-gray-900 dark:text-slate-400 mt-2 text-center font-semibold self-center">
+            Software Engineer
           </div>
-          <div className="mt-5 text-gray-900 dark:text-slate-400 text-center">
-            Building & designing meaningful software, solving architectural
-            problems and writing quality code are few things that excite me.
-            Currently writing logic for transactional systems in .NET and C++.
-            Also quite familiar with MERN stack and NextJS with TailwindCSS
+          <div className="prose dark:prose-invert mt-2 text-lg text-center w-4/5 self-center">
+            Working on system software for super fast ATM transactions using
+            C++. Learning about software engineering, computer architecture,
+            operating systems, compilers and frameworks everyday.
           </div>
         </div>
         <Socials />
@@ -39,10 +38,7 @@ export default function Introduction() {
             className="h-[24px]"
             src="https://skillicons.dev/icons?i=typescript"
           />
-          <img
-            className="h-[24px]"
-            src="https://skillicons.dev/icons?i=python"
-          />
+          <img className="h-[24px]" src="https://skillicons.dev/icons?i=rust" />
           <img
             className="h-[24px]"
             src="https://skillicons.dev/icons?i=nodejs"
