@@ -13,14 +13,14 @@ export default function ProjectCard(props: IProjectCard) {
       <div className="">
         <div className="flex flex-row justify-between items-center my-2">
           <ProjectIcons {...props} />
-          <span
+          {/* <span
             className={clsx(
               `${props.context.color}`,
               "px-4 text-sm font-bold text-gray-950 rounded-l-full"
             )}
           >
             {props.context.topic}
-          </span>
+          </span> */}
         </div>
         <div className="flex flex-row justify-between">
           <div className="dark:text-slate-200 font-semibold text-xl mb-2">

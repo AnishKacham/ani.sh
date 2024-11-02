@@ -21,11 +21,11 @@ export default function TimeLine({
             return (
               <li
                 key={index}
-                className="relative flex gap-6 items-baseline pb-6 before:absolute before:left-[5px] before:top-[18px] before:h-full before:w-[2px] before:dark:bg-slate-200 before:bg-slate-600
+                className="relative flex gap-6 items-baseline pb-6 before:absolute before:left-[5px] before:top-[18px] before:h-full before:w-[2px] before:dark:bg-gray-700 before:bg-gray-200
               last:before:hidden"
               >
                 <div className="">
-                  <div className="w-[12px] h-[12px] rounded-full dark:bg-slate-200 bg-slate-600" />
+                  <div className="w-[12px] h-[12px] rounded-full dark:bg-gray-700 bg-gray-200" />
                 </div>
                 <div className="md:w-40 md:shrink-0">
                   <p className="text-lg font-semibold text-red-400">

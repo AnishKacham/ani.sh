@@ -10,13 +10,13 @@ export default function Introduction() {
     <>
       <div className="flex flex-col sm:grid grid gap-5 mt-20 w-full">
         <div className="self-center flex flex-col">
-        <Image
-          src={ProfilePicture}
-          width={228}
-          alt="profile-picture"
-          className="rounded-md self-center"
-          priority
-        />
+          <Image
+            src={ProfilePicture}
+            width={228}
+            alt="profile-picture"
+            className="rounded-md self-center"
+            priority
+          />
         </div>
         <div className="flex flex-col">
           <div className="w-fit h-fit text-5xl font-sans font-extrabold text-gray-900 dark:text-slate-400 self-center text-center">
@@ -65,10 +65,8 @@ export default function Introduction() {
           />
           <img className="h-[24px]" src="https://skillicons.dev/icons?i=git" />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-6 flex-wrap">
           <ResumeButton />
-        </div>
-        <div className="flex justify-center">
           <Suspense
             fallback={
               <button className="flex flex-row items-center w-36 rounded-md button gap-1 bg-slate-700 animate-pulse">

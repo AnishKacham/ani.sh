@@ -56,7 +56,7 @@ export default function RootLayout({
       <body
         className={clsx(
           inter.className,
-          "bg-slate-50 dark:bg-gray-950 dark:text-slate-400 px-6 md:px-0 xl:px-0"
+          "bg-slate-50 dark:bg-gray-900 dark:text-slate-400 px-6 md:px-0 xl:px-0"
         )}
       >
         <Providers>
