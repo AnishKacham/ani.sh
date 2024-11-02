@@ -4,7 +4,7 @@ import { PROJECTS } from "@/app/constants";
 
 export default function Projects() {
   return (
-    <div className="mt-32 w-full flex flex-col">
+    <div className="w-full flex flex-col">
       <div className="md:grid flex flex-col grid-cols-[max-content_1fr] items-center gap-8">
         <div className="text-3xl font-extrabold w-fit dark:text-slate-200">
           {"Some things that I've built"}

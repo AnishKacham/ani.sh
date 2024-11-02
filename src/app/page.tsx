@@ -5,6 +5,7 @@ import WorkHistory from "./(components)/work-history";
 import Projects from "./(components)/(projects)/projects";
 import Introduction from "./(components)/introduction";
 import WorkHistoryV2 from "./(components)/work-history-v2";
+import OpenSource from "./(components)/open-source";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Introduction />
       {/* @ts-expect-error Async Server Component */}
       <WorkHistoryV2 />
+      <OpenSource/>
       <Projects />
     </main>
   );

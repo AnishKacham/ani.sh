@@ -29,7 +29,7 @@ export const PROJECTS = [
   {
     title: "Erp Course Notifier",
     description:
-      "A selenium webdriver script that continuosly checks if any seats have opened for a particular course and alerts you. Attempted to make it Multithreaded",
+      "A selenium webdriver script that continuosly checks if any seats have opened for a particular course on the BITS CMS and alerts you.",
     tags: ["Python", "Selenium Web Driver"],
     github: "https://github.com/AnishKacham/ERP-Course-Notifier",
     context: PROJECT_CONTEXTS[CONTEXT_NUM.PERSONAL_PROJECT],
@@ -90,3 +90,33 @@ export const AUTHORS: IAuthors = {
     url: "https://x.com/anishKach?t=lqwNg4n15mY_sIriBO6g2g&s=09",
   },
 };
+
+type IOSource = {
+  repo_link: string;
+  repo_display: string;
+  pr_title: string;
+  pr_description: string;
+  pr_no: number;
+  month_year: string;
+};
+
+export const OSOURCEDATA: IOSource[] = [
+  {
+    repo_link: "https://github.com/juspay/hyperswitch",
+    repo_display: "juspay/hyperswitch",
+    pr_title: "refactor(connector): add amount conversion framework to Shift4",
+    pr_description:
+      "Refactor code to adhere to the strategy design pattern so that amount conversion is uniform throughout the different connectors that hyperswitch has",
+    pr_no: 6250,
+    month_year: "October 2024",
+  },
+  {
+    repo_link: "https://github.com/asyncapi/cli",
+    repo_display: "asyncapi/cli",
+    pr_title: "feat: add flag to set context when it is created",
+    pr_description:
+      "Add a new flag to an existing oclif command for the asyncapi cli",
+    pr_no: 752,
+    month_year: "October 2023",
+  },
+];
