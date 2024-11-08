@@ -1,0 +1,87 @@
+---
+title: " A short note on git rebases merges and cherry-picks for self and everyone"
+date: 2024-11-8
+published: "true"
+tags: ["Git", "Merge Conflicts"]
+time: 7
+summary: "Know about how the --ours and --theirs flags work during a rebase, merge and a cherry-pick"
+author: "anish"
+---
+
+I would often find myself with a couple of files haveing a merge conflict when I'm either rebasing, merging or cherry-picking
+
+let's say I'm working on my feature branch called **foo** and there are some additional changes on the **main** branch that I want to incorporate into my branch. But I already made changes to my feature branch and **commited** them.  
+So my branches now look something like this :
+
+```bash
+I--A--B--C--D--E  main
+      \
+       F--G--H  foo
+```
+
+If Someone has made a change on the exact same line of code in the exact same file as I did, in one of the commits C, D or E then I will definitely have a merge conflict thrown at me, when I run:
+
+1. git merge main
+2. git rebase main
+3. git cherry-pick \< commit hash of conflicting commit >
+
+Sometimes I just want the version of the file from _main_ and then I'll amend my latest commit / make a new commit to make my changes again in that file.  
+In this case I would do :
+
+#### for merge
+
+```sh
+git merge main
+git checkout --theirs <file_name_of_conflicted_file>
+git add <file_name_of_conflicted_file>
+git merge --continue
+```
+
+or
+
+#### for cherry-pick
+
+```sh
+git cherry-pick b5fde68
+git checkout --theirs <file_name_of_conflicted_file>
+git add <file_name_of_conflicted_file>
+git cherry-pick --continue
+```
+
+or
+
+#### for a rebase
+
+```sh
+ git rebase main
+ git checkout --ours <file_name_of_conflicted_file>
+ git add <file_name_of_conflicted_file>
+ git rebase --continue
+```
+
+**--ours and --theirs are inverted for rebase lol. Why?**  
+when we do a rebase, internally
+git rebase main (in my case, i.e, the example above) translates to :  
+git checkout main  
+git cherry-pick F  
+git cherry-pick G  
+git cherry-pick H  
+ .... and then some renaming logic to finish the rebase
+
+so to pick the files from main, you actually have to use the --ours flag
+
+### A Shorter way
+
+If I know before hand that there are going to be merge conflicts and I want all conflicted files to be from **main**
+
+#### for a merge
+
+`git merge -X theirs main`
+
+#### for a cherry-pick
+
+`git cherry-pick -X theirs b5fde68`
+
+#### for a rebase
+
+`git rebase main -X ours`
