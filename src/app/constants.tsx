@@ -104,6 +104,15 @@ export const OSOURCEDATA: IOSource[] = [
   {
     repo_link: "https://github.com/juspay/hyperswitch",
     repo_display: "juspay/hyperswitch",
+    pr_title: "feat(events): Add payment reject audit events",
+    pr_description:
+      "Add audit events to Payment Reject flow so that they can be viewed in apache kafka and are key for non-developers",
+    pr_no: 6465,
+    month_year: "November 2024",
+  },
+  {
+    repo_link: "https://github.com/juspay/hyperswitch",
+    repo_display: "juspay/hyperswitch",
     pr_title: "refactor(connector): add amount conversion framework to Shift4",
     pr_description:
       "Refactor code to adhere to the strategy design pattern so that amount conversion is uniform throughout the different connectors that hyperswitch has",
