@@ -14,17 +14,14 @@ export default function OpenSource() {
       {OSOURCEDATA.map((osourceitem, index) => {
         return (
           <div key={index} className="w-full">
-            <Link
-              href={"https://github.com/juspay/hyperswitch"}
-              className="text-md text-white"
-            >
+            <Link href={osourceitem.repo_link} className="text-md text-white">
               <span className="underline dark:text-red-400 text-red-600">
                 {osourceitem.repo_display}
               </span>
               <span className="text-sm ml-2"> {osourceitem.month_year} </span>
             </Link>
             <div className="w-full border p-6 rounded-md dark:border-gray-600 border-gray-200 mt-1">
-              <Link href={"https://github.com/juspay/hyperswitch/pull/6250"}>
+              <Link href={osourceitem.repo_link + "/pull/" + osourceitem.pr_no}>
                 <span className="text-xl text-white">
                   {" "}
                   {osourceitem.pr_title}{" "}
