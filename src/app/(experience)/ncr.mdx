@@ -1,14 +1,18 @@
 ---
 company: "NCR Atleos"
-url: "https://www.ncr.com/"
-duration: ""
+url: "https://www.ncratleos.com/"
+duration: "2y"
 title: "Software Engineer I"
 startdate: 2023-7-10
-enddate:
+enddate: 2025-5-7
 logolight: "/ncratleos-gray-green.png"
 logodark: "/ncratleos-green-gray.png"
 ---
 
+- Fix and Identify root causes for multiple pathological bugs across extremely legacy C++ and .NET code
+- Prevent a system crash by resolving memory corruption in a config sensitive bug using WinDbg
+- Fixed a critical issue caused by incorrect COM Apartments usage, where a COM object instantiated on one thread was accessed from another, leading to shared memory corruption; refactored the threading model to ensure proper synchronization and thread safety in a multithreading environment.
+- Diagnosed and fixed a rare, non repro \( reported once in 2 years in production \) Heisenbug in a C++/.NET event-driven architecture application using the CEN-XFS API, where the win32 application was unresponsive due to an indefinite wait for an event, leading to live lock and starvation.
 - Used the [CEN eXtensions for Financial Services (XFS)](https://www.cencenelec.eu/areas-of-work/xfs_cwa16926_340_release/) api to improve International Coin Dispenser admin functions (Clear, Add, etc) by 3x (10 mins -> 3 mins) bypassing redundant thread creation for each denomination.
 - Implement E-Receipt functionality i.e, forwarding of physical receipt data sent by an ATM switch through NDC message format to a customer experience management server for relay to mobile phones, etc.
 - Worked on generating the distributable for clients using the [WiX Toolset v4](https://wixtoolset.org/docs/intro/) released on 5th April, 2023 and it's integration into the CI/CD System
